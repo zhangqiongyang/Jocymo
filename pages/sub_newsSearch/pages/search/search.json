@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "v-product": "/components/product/index",
+    "v-case": "/components/case/index",
+    "v-demand": "/components/demand/index"
+  }
+}

@@ -1,0 +1,19 @@
+<!--components/case/index.wxml-->
+<view class='caseItem' bindtap='jumpToCase'>
+  <image class='caseItemImage' src='{{caseItem.pic}}'></image>
+  <view class='caseInfo'>
+    <text class='caseName'>{{caseItem.name}}</text>
+    <text class='casePrice'>￥{{caseItem.price}}</text>
+    <text class='caseCompany'>{{caseItem.company}}</text>
+    <view class='operationBox'>
+      <view class='operationItem'>
+        <image src='/image/index_collect.png'></image>
+        <text>{{caseItem.collect}}</text>
+      </view>
+      <view class='operationItem'>
+        <image src='/image/index_like.png'></image>
+        <text>{{caseItem.like}}</text>
+      </view>
+    </view>
+  </view>
+</view>

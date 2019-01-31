@@ -1,0 +1,64 @@
+/* components/case/index.wxss */
+
+.caseItem {
+  padding: 30rpx 0;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.caseItemImage {
+  width: 280rpx;
+  height: 210rpx;
+  border-radius: 8px;
+}
+
+.caseInfo {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30rpx;
+  width: 378rpx;
+}
+
+.caseName {
+  font-size: 26rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.casePrice {
+  color: #ff6901;
+  padding-top: 40rpx;
+  display: block;
+}
+
+.caseCompany {
+  color: #999;
+  font-size: 18rpx;
+}
+
+.operationBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.operationItem {
+  padding-left: 60rpx;
+}
+
+.operationBox image {
+  width: 22rpx;
+  height: 22rpx;
+  padding-right: 10rpx;
+}
+
+.operationItem text{
+  color: #666666;
+  font-size: 22rpx;
+}

@@ -1,0 +1,18 @@
+/* pages/sub_details/pages/disclaimer/disclaimer.wxss */
+.background{
+  padding: 40rpx 30rpx 0 30rpx;
+}
+
+.disclaimerTitle{
+  font-weight:500;
+  display: block;
+  text-align: center;
+}
+
+.disclaimerCon{
+  display: block;
+  font-size: 26rpx;
+  color: #666666;
+  line-height: 46rpx;
+  padding-top: 38rpx;
+}

@@ -1,0 +1,58 @@
+/* pages/sub_details/pages/business/business.wxss */
+
+/* 轮播图 */
+.index_slideshow {
+  padding-top: 88rpx;
+  height: 375rpx;
+}
+
+/* 商家列表 */
+
+.businessList {
+  margin-top: 10rpx;
+}
+
+.businessItem {
+  display: flex;
+  flex-direction: row;
+  padding: 40rpx 30rpx;
+  background-color: #fff;
+  margin-top: 10rpx;
+}
+
+.businessLogo {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+
+.businessCon{
+  margin-left: 20rpx;
+}
+
+/* .businessName{
+  display: flex;
+  align-items: baseline;
+} */
+
+.businessName image {
+  width: 20rpx;
+  height: 20rpx;
+  position:absolute;
+}
+
+.businessDesc{
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.businessImageBox{
+  padding-top: 40rpx;
+}
+
+.businessImageBox image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+  margin-right: 20rpx;
+}

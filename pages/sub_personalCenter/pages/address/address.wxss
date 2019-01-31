@@ -1,0 +1,58 @@
+/* pages/sub_personalCenter/pages/address/address.wxss */
+.background{
+  padding-top: 1px;
+}
+.form{
+  background-color:#fff; 
+  margin-top: 20rpx;
+}
+.form input{
+  height: 88rpx;
+  width: 100%;
+  font-size: 26rpx;
+  color: #333;
+}
+.form textarea{
+  width: 100%;
+  height: 134rpx;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+  font-size: 26rpx;
+  color: #333;
+}
+.placeholder{
+  font-size: 26rpx;
+  color: #333333;
+}
+.placeholder_active{
+  color: #FB670E; 
+}
+.formList{
+  border-bottom: 1px solid #EAEAEA;
+  display: flex;
+}
+.formList image{
+  width: 44rpx;
+  height: 44rpx;
+  padding: 22rpx 20rpx 22rpx 30rpx;
+}
+.verifyInfo{
+  font-size: 24rpx;
+  color: #FB670E;
+  padding-bottom: 22rpx;
+  display: block;
+}
+
+
+.submitBtn{
+  margin: 40rpx auto 0 auto;
+  background-color: #FB670E;
+  color: #fff;
+  font-size: 36rpx;
+  width: 690rpx;
+  height: 88rpx;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

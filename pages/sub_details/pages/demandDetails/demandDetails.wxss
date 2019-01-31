@@ -1,0 +1,173 @@
+/* pages/sub_details/pages/demandDetails/demandDetails.wxss */
+
+.background{
+  margin-bottom: 98rpx;
+}
+
+/* 轮播图 */
+.index_slideshow{
+  height: 375rpx;
+}
+
+
+/* 需求名称 */
+
+.demandName {
+  padding: 30rpx;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: 500;
+  background-color: #ffffff;
+}
+
+.demandDescription {
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.demandDescriptionTitle {
+  width: 100%;
+  height: 88rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.demandDescriptionTitle text {
+  height: 84rpx;
+  display: flex;
+  align-items: center;
+  width: 160rpx;
+  border-bottom: 4px solid #ff6901;
+  margin-left: 30rpx;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.demandDescriptionList {
+  padding: 30rpx;
+}
+
+.demandDescriptionList text {
+  font-size: 26rpx;
+}
+
+.demandDescriptionItem {
+  padding-top: 30rpx;
+  display: flex;
+}
+
+.descriptionItem {
+  color: #999;
+  padding-right: 30rpx;
+}
+
+.descriptionDetails {
+  width: 556rpx;
+}
+
+.getPhone {
+  display: flex;
+  align-items: center;
+  padding-top: 50rpx;
+}
+
+.btn_buy {
+  width: 197rpx;
+  height: 68rpx;
+  background: #ff6901;
+  border-radius: 8rpx;
+  font-size: 30rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 购买弹窗 */
+
+.buyBack {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.49);
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.buyTier {
+  width: 590rpx;
+  height: 290rpx;
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+}
+
+.buyTitle{
+  font-weight: bold;
+  padding-top: 50rpx;
+  padding-bottom: 40rpx;
+  display: block;
+  text-align: center;
+}
+
+.buy{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.buy_checkBox {
+  width: 24rpx;
+  height: 24rpx;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4rpx;
+}
+
+.buy image {
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.buyText{
+  padding-left: 20rpx;
+  color: #666666;
+  font-size: 24rpx;
+}
+
+.color{
+  color: #0196FF;
+}
+
+.mine_btnBox{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 372rpx;
+  padding-top: 30rpx;
+}
+
+.mine_btn{
+  width: 176rpx;
+  height: 68rpx;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.cancel{
+  background-color: #F6F6F6;
+  color: #666666;
+  margin-right: 20rpx;
+}
+
+.submit{
+  background-color: #FF6901;
+  color: #fff;
+}
+

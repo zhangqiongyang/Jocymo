@@ -1,0 +1,85 @@
+/* pages/sub_newsSearch/pages/search/search.wxss */
+@import '/components/search/index.wxss';
+
+/* 搜索类型 */
+
+.searchClassify {
+  width: 100%;
+  padding: 0 30rpx;
+  height: 88rpx;
+  display: flex;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-top: 88rpx;
+}
+
+.classify {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: #666;
+}
+
+.classifyHover {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: #ff6901;
+  border-bottom: 4rpx solid #ff6901;
+}
+
+/* 历史纪录 */
+
+.history {
+  padding: 30rpx 30rpx 0 30rpx;
+  background-color: #fff;
+}
+
+.historyTitleBox {
+  display: flex;
+  justify-content: space-between;
+  /* margin-bottom: 40rpx; */
+  align-items: center;
+}
+
+.historyTitleBox text {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.historyTitleBox image {
+  width: 32rpx;
+  height: 32rpx;
+  padding: 30rpx;
+}
+
+.historyList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.historyItem {
+  background-color: #f6f6f6;
+  font-size: 26rpx;
+  padding: 20rpx 30rpx;
+  border-radius: 32rpx;
+  margin-right: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+/* 搜索结果 */
+
+/* 产品 */
+
+.productList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 30rpx;
+}

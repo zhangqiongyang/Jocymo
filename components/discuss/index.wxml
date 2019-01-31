@@ -1,0 +1,28 @@
+<!--components/discuss/index.wxml-->
+<view class='discuss'>
+  <view class='discussTitle'>
+    <text>评论</text>
+  </view>
+  <view>
+    <block wx:for='{{guestbookinfo}}' wx:for-index='key' wx:key='key'>
+      <view class='msgContent'>
+        <view class='msgUserImg'>
+          <image src='{{item.headimage}}'></image>
+        </view>
+        <view class='msgText'>
+          <view class='msgHead'>
+            <text class='msgUserName'>{{item.nickname}}</text>
+            <view class='msgLikeGroup' bindtap='msglike' data-guestbookid='{{item.guestbook_id}}' data-key='{{key}}'>
+              <!-- <image class='msgLike' src='/image/article_transmit.png'></image> -->
+              <image wx:if="{{item.is_valid=='0'}}" class='msgLike' src='/image/index_likeHover.png'></image>
+              <image wx:else class='msgLike' src='/image/index_like.png'></image>
+              <text class='likeNum'>{{item.countpraise}}</text>
+            </view>
+          </view>
+          <text class='msg'>{{item.content}}</text>
+          <text class='msgTime'>{{item.guestbook_time}}</text>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

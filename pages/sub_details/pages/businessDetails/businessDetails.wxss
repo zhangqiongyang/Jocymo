@@ -1,0 +1,158 @@
+/* pages/sub_details/pages/businessDetails/businessDetails.wxss */
+
+.background{
+  margin-bottom: 98rpx;
+}
+
+/* 轮播图 */
+.index_slideshow{
+  height: 375rpx;
+}
+
+/* 商家简介 */
+
+.businessDesc {
+  width: 100%;
+  padding: 25rpx 30rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.businessLogo {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+
+.caseInfo {
+  padding-left: 20rpx;
+}
+
+.caseAddress {
+  display: flex;
+  align-items: center;
+  padding-top: 20rpx;
+}
+
+.caseAddress image {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.caseAddress text {
+  font-size: 24rpx;
+  color: #999;
+  padding-left: 10rpx;
+}
+
+/* 商家信息 */
+
+.businessInfo {
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.businessInfoTitle {
+  display: flex;
+  flex-direction: row;
+  height: 140rpx;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: 1px solid #ddd;
+}
+
+.titleItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  flex: 1;
+  justify-content: center;
+}
+
+.titleItem image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.titleNum {
+  font-size: 36rpx;
+  font-weight: bold;
+  line-height: 40rpx;
+}
+
+.titleNumHover{
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #FF6901; 
+  line-height: 40rpx;
+}
+
+.titleText {
+  padding-top: 20rpx;
+}
+
+.titleTextHover{
+  padding-top: 20rpx;
+  color: #FF6901;
+}
+
+.businessIntroCon {
+  padding: 30rpx 30rpx 40rpx 30rpx;
+  font-size: 26rpx;
+}
+
+.businessQualificationCon {
+  padding: 30rpx;
+}
+
+.qualificationConItem {
+  width: 206rpx;
+  height: 274rpx;
+  background: #f6f6f6;
+  border-radius: 8rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+  position: relative;
+}
+
+.qualificationConItem image {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.businessProductCon {
+  padding: 30rpx;
+}
+
+.more {
+  width: 690rpx;
+  height: 88rpx;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30rpx;
+}
+
+.businessCaseCon{
+  padding: 30rpx;
+}
+
+.productList{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.productItem{
+  margin-bottom: 30rpx;
+}
+

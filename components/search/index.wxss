@@ -1,0 +1,60 @@
+/* components/search/index.wxss */
+.index_search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: linear-gradient(to right, #ff6901, #fe872f);
+  line-height: 56rpx;
+  width: 100%;
+  height: 88rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.index_service_button {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0;
+  width: 148rpx;
+  height: 100%;
+}
+
+.index_service {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 148rpx;
+  height: 100%;
+  justify-content: center;
+}
+
+.index_service text {
+  font-size: 18rpx;
+  line-height: 18rpx;
+  color: #fff;
+}
+
+.index_service_img {
+  width: 55rpx;
+  height: 55rpx;
+}
+
+.index_search_input {
+  background-color: #f5f5f5;
+  border-radius: 50px;
+  width: 528rpx;
+  height: 62rpx;
+  font-size: 26rpx;
+  color: #424242;
+  align-items: center;
+  display: flex;
+}
+
+.index_search_input image {
+  width: 32rpx;
+  height: 32rpx;
+  padding-left: 30rpx;
+}

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-swiper": "/components/swiper/index",
+    "v-search": "/components/search/index"
+  }
+}

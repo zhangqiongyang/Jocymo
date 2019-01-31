@@ -1,0 +1,64 @@
+/* components/order/index.wxss */
+.caseNav{
+  height: 88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+}
+
+.caseSortordBox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+}
+
+.caseSortordItem{
+  font-size: 30rpx;
+  color: #333;
+  width: 120rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeSortord{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  width: 120rpx;
+  justify-content: center;
+}
+
+.timeSortord text{
+  color: #333;
+}
+
+.caseOrderBox{
+  display: flex;
+  flex-direction: column;
+  padding-left: 9rpx;
+}
+
+.caseOrderBox image{
+  width: 8rpx;
+  height: 7rpx;
+}
+
+.caseFiltrate{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  /* width: 220rpx; */
+}
+
+.caseFiltrate image{
+  width: 31rpx;
+  height: 28rpx;
+  padding-left: 9rpx;
+}
+

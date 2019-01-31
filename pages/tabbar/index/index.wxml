@@ -1,0 +1,83 @@
+<!--pages/tabbar/index/index.wxml-->
+<view>
+  <!-- 搜索 -->
+  <v-search />
+
+
+  <!-- 轮播图 -->
+  <view class='index_slideshow'>
+    <v-swiper swiperpicinfo='{{indexpicinfo}}' />
+  </view>
+
+
+  <!-- 新闻速报 -->
+  <view class='index_area'>
+    <view class='index_area_title'>
+      <text>新闻速报</text>
+      <image src='/image/index_more.png' bindtap='jumpToAllNews'></image>
+    </view>
+
+    <view class='newsList'>
+      <block wx:for='{{newsinfo}}' wx:key='key'>
+        <view class='newsCon' bindtap='jumpToNews' data-article_id='{{item.article_id}}'>
+          <image class='newsListImg' src='/image/index_news_play.png'></image>
+          <text class='newsListText'>{{item.article_title}}</text>
+        </view>
+      </block>
+    </view>
+
+
+  </view>
+
+
+  <!-- 厂商汇集 -->
+  <view class='index_area'>
+    <view class='index_area_title'>
+      <text>厂商汇集</text>
+      <image src='/image/index_more.png' bindtap='jumpToAllBusiness'></image>
+    </view>
+
+    <view class='manufacturerList'>
+      <scroll-view scroll-x style='white-space: nowrap;padding:30rpx 20rpx;'>
+        <block wx:for='{{manufacturerList}}' wx:key='key'>
+          <view class='manufacturerItem' bindtap='jumpToBusiness'>
+            <image src='{{item.manufacturer_pic}}'></image>
+            <text>{{item.manufacturer_text}}</text>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+
+
+
+  <!-- 热案推荐 -->
+  <view class='index_area'>
+    <view class='index_area_title'>
+      <text>热案推荐</text>
+      <image src='/image/index_more.png' bindtap='jumpToAllCase'></image>
+    </view>
+    <view class='caseList'>
+      <block wx:for='{{caseList}}' wx:key='key'>
+        <v-case caseItem='{{item}}' />
+      </block>
+    </view>
+  </view>
+
+
+  <!-- 优材推荐 -->
+  <view>
+    <view class='index_area_title'>
+      <text>优材推荐</text>
+      <image src='/image/index_more.png' bindtap='jumpToAllProduct'></image>
+    </view>
+    <view class='optimalMaterial'>
+      <scroll-view scroll-x style='white-space: nowrap;padding:30rpx 20rpx;'>
+        <block wx:for='{{optimalMaterialList}}' wx:key='key'>
+          <v-product productItem='{{item}}' class='productItem'/>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+
+</view>

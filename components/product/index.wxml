@@ -1,0 +1,11 @@
+<!--components/product/index.wxml-->
+<view class='optimalMaterialItem' bindtap='jumpToProduct'>
+  <image class='optimalMaterialImage' src='{{productItem.pic}}'></image>
+  <text class='optimalName'>{{productItem.name}}</text>
+  <text class='optimalPrice'>￥{{productItem.price}}</text>
+  <view class='intoTheShopBox'>
+    <text class='caseCompany'>{{productItem.company}}</text>
+    <text class='intoTheShop'>进店</text>
+    <image src='/image/index_littleMore.png'></image>
+  </view>
+</view>

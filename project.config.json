@@ -1,0 +1,112 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.4.3",
+	"appid": "wx7dabe7275e0cbb85",
+	"projectname": "%E6%8B%9B%E6%9D%90%E7%8C%AB",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 10,
+			"list": [
+				{
+					"id": -1,
+					"name": "选材",
+					"pathName": "pages/tabbar/selectMaterial/selectMaterial",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "案例详情",
+					"pathName": "pages/sub_details/pages/caseDetails/caseDetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "需求详情",
+					"pathName": "pages/sub_details/pages/demandDetails/demandDetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "全部新闻",
+					"pathName": "pages/sub_newsSearch/pages/allNews/allNews",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "招材猫详情",
+					"pathName": "pages/sub_newsSearch/pages/authorDetails/authorDetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "新闻详情",
+					"pathName": "pages/sub_newsSearch/pages/newsDetails/newsDetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "产品列表",
+					"pathName": "pages/sub_details/pages/product/product",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商家详情",
+					"pathName": "pages/sub_details/pages/businessDetails/businessDetails",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "已发布",
+					"pathName": "pages/sub_personalCenter/pages/published/published",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/sub_newsSearch/pages/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发布需求",
+					"pathName": "pages/sub_personalCenter/pages/publishDemand/publishDemand",
+					"scene": null
+				}
+			]
+		}
+	}
+}

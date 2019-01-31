@@ -1,0 +1,7 @@
+<!--components/publishedProduct/index.wxml-->
+<view class='productItem'>
+  <image class='productImage' src='{{published.image}}'></image>
+  <text>{{published.text}}</text>
+  <image class='productDelete' src='/image/published_delete.png' bindtap='deleteItem'></image>
+</view>
+

@@ -1,0 +1,55 @@
+/* components/product/index.wxss */
+
+.optimalMaterialItem {
+  display: inline-block;
+  /* padding-right: 20rpx; */
+  width: 330rpx;
+  background-color: #ffffff;
+  border-radius: 8rpx;
+}
+
+.optimalMaterialImage {
+  width: 330rpx;
+  height: 330rpx;
+  border-radius: 8rpx 8rpx 0 0;
+}
+
+.intoTheShopBox {
+  line-height: 18rpx;
+  padding-bottom: 30rpx;
+}
+
+.intoTheShop {
+  font-size: 18rpx;
+  padding-left: 16rpx;
+  padding-right: 4rpx;
+}
+
+.intoTheShopBox image {
+  width: 7rpx;
+  height: 10rpx;
+}
+
+
+.optimalName {
+  font-size: 26rpx;
+  word-wrap:break-word;
+  white-space: normal;
+  text-overflow: ellipsis;
+  line-height: 40rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.optimalPrice{
+  color: #ff6901;
+  padding-top: 30rpx;
+  display: block;
+}
+
+.caseCompany {
+  color: #999;
+  font-size: 18rpx;
+}

@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/tabbar/index/index",
+    "pages/sub_details/pages/business/business",
+    "pages/sub_personalCenter/pages/publishDemand/publishDemand",
+    "pages/sub_personalCenter/pages/published/published",
+    "pages/sub_details/pages/productDetails/productDetails",
+    "pages/sub_details/pages/businessDetails/businessDetails",
+    "pages/sub_details/pages/demandDetails/demandDetails",
+    "pages/sub_details/pages/caseDetails/caseDetails",
+    "pages/logs/logs",
+    "pages/tabbar/case/case",
+    "pages/tabbar/selectMaterial/selectMaterial",
+    "pages/tabbar/demand/demand",
+    "pages/tabbar/mine/mine",
+    "pages/sub_details/pages/product/product",
+    "pages/sub_details/pages/disclaimer/disclaimer",
+    "pages/sub_personalCenter/pages/address/address",
+    "pages/sub_newsSearch/pages/message/message",
+    "pages/sub_newsSearch/pages/allNews/allNews",
+    "pages/sub_newsSearch/pages/authorDetails/authorDetails",
+    "pages/sub_newsSearch/pages/newsDetails/newsDetails",
+    "pages/sub_newsSearch/pages/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF6901",
+    "navigationBarTitleText": "招材猫",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#6A6B6B",
+    "selectedColor": "#FF6901",
+    "list": [
+      {
+        "pagePath": "pages/tabbar/index/index",
+        "text": "发现",
+        "iconPath": "image/index.png",
+        "selectedIconPath": "image/indexHover.png"
+      },
+      {
+        "pagePath": "pages/tabbar/selectMaterial/selectMaterial",
+        "text": "选材",
+        "iconPath": "image/selectMaterial.png",
+        "selectedIconPath": "image/selectMaterialHover.png"
+      },
+      {
+        "pagePath": "pages/tabbar/case/case",
+        "text": "案例",
+        "iconPath": "image/case.png",
+        "selectedIconPath": "image/caseHover.png"
+      },
+      {
+        "pagePath": "pages/tabbar/demand/demand",
+        "text": "需求",
+        "iconPath": "image/demand.png",
+        "selectedIconPath": "image/demandHover.png"
+      },
+      {
+        "pagePath": "pages/tabbar/mine/mine",
+        "text": "我的",
+        "iconPath": "image/mine.png",
+        "selectedIconPath": "image/mineHover.png"
+      }
+    ]
+  }
+}

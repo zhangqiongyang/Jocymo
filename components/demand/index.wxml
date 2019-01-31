@@ -1,0 +1,20 @@
+<!--components/demand/index.wxml-->
+<view class='demandItem' bindtap='jumpToDemand'>
+  <view class='demandImage'>
+    <image src='{{demandItem.image}}'></image>
+    <view wx:if='{{demandItem.tag==1}}' class='demandtag urgent'>加急</view>
+    <view wx:if='{{demandItem.tag==2}}' class='demandtag middle'>尽快</view>
+    <view wx:if='{{demandItem.tag==3}}' class='demandtag unhurried'>不急</view>
+  </view>
+  <view class='demandInfo'>
+    <text class='demandName'>{{demandItem.name}}</text>
+    <view class='demandAddress'>
+      地点:
+      <text>{{demandItem.address}}</text>
+    </view>
+    <view class='demandPrice'>
+      预算:
+      <text>{{demandItem.price}}</text>
+    </view>
+  </view>
+</view>

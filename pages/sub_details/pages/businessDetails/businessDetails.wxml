@@ -1,0 +1,98 @@
+<!--pages/sub_details/pages/businessDetails/businessDetails.wxml-->
+<view class='background'>
+
+  <!-- 轮播图 -->
+  <view class='index_slideshow'>
+    <v-swiper swiperpicinfo='{{indexpicinfo}}' />
+  </view>
+
+  <!-- 商家简介 -->
+  <view class='businessDesc'>
+    <image class='businessLogo' src='/image/index_pic.png'></image>
+    <view class='caseInfo'>
+      <text class='caseName'>北京金宇堂饭店装修设计</text>
+      <view class='caseAddress'>
+        <image src='/image/case_address.png'></image>
+        <text>北京市丰台区</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 商家信息 -->
+  <view class='businessInfo'>
+    <view class='businessInfoTitle'>
+      <view class='titleItem' bindtap='changeInfoItem' data-infoitem='1'>
+        <image wx:if='{{infoItem == 1}}' src='/image/business_introHover.png'></image>
+        <image wx:else src='/image/business_intro.png'></image>
+        <text class='{{infoItem == 1?"titleTextHover":"titleText"}}'>简介</text>
+      </view>
+      <view class='titleItem' bindtap='changeInfoItem' data-infoitem='2'>
+        <text class='{{infoItem == 2?"titleNumHover":"titleNum"}}'>3</text>
+        <text class='{{infoItem == 2?"titleTextHover":"titleText"}}'>资质</text>
+      </view>
+      <view class='titleItem' bindtap='changeInfoItem' data-infoitem='3'>
+        <image wx:if='{{infoItem == 3}}' src='/image/business_productHover.png'></image>
+        <image wx:else src='/image/business_product.png'></image>
+        <text class='{{infoItem == 3?"titleTextHover":"titleText"}}'>产品</text>
+      </view>
+      <view class='titleItem' bindtap='changeInfoItem' data-infoitem='4'>
+        <text class='{{infoItem == 4?"titleNumHover":"titleNum"}}'>5</text>
+        <text class='{{infoItem == 4?"titleTextHover":"titleText"}}'>案例</text>
+      </view>
+      <view class='titleItem' bindtap='changeInfoItem' data-infoitem='5'>
+        <image wx:if='{{infoItem == 5}}' src='/image/business_demandHover.png'></image>
+        <image wx:else src='/image/business_demand.png'></image>
+        <text class='{{infoItem == 5?"titleTextHover":"titleText"}}'>需求</text>
+      </view>
+    </view>
+    <view class='businessInfoCon'>
+      <view class='businessIntroCon' wx:if='{{infoItem == 1}}'>
+        成立于2001年，是一家集研发、生产、建造于一体的大型企业。公司“建谊”牌产品被评为北京本地十大名牌之一，并通过IOS9001质量验证。公司秉承“简约、快捷、优质、价廉”的产品理念，秉承“让世界的人们都住的上好房子”的企业愿景，跟随一带一路，将事业发展到海外。 欢迎各位专家咨询。
+      </view>
+      <view class='businessQualificationCon' wx:if='{{infoItem == 2}}'>
+        <scroll-view scroll-x style='white-space: nowrap;'>
+          <block wx:for='{{businessInfo.qualification}}' wx:key='key'>
+            <view class='qualificationConItem' bindtap='previewImage'>
+              <image src='{{item}}' mode='aspectFit'></image>
+            </view>
+          </block>
+        </scroll-view>
+      </view>
+      <view class='businessProductCon' wx:if='{{infoItem == 3}}'>
+        <block>
+          <view class='productList'>
+            <block wx:for='{{optimalMaterialList}}' wx:key='key'>
+              <v-product productItem='{{item}}' class='productItem' />
+            </block>
+          </view>
+        </block>
+        <view class='more'>加载更多</view>
+      </view>
+      <view class='businessCaseCon' wx:if='{{infoItem == 4}}'>
+        <block wx:for='{{caseList}}' wx:key='key'>
+          <v-case caseItem='{{item}}' />
+        </block>
+        <block wx:for='{{caseList}}' wx:key='key'>
+          <v-case caseItem='{{item}}' />
+        </block>
+        <view class='more'>加载更多</view>
+      </view>
+      <view class='businessCaseCon' wx:if='{{infoItem == 5}}'>
+        <block wx:for='{{demandList}}' wx:key='key'>
+          <view class='caseItem'>
+            <v-demand demandItem='{{item}}' />
+          </view>
+        </block>
+        <view class='more'>加载更多</view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 评论 -->
+  <v-discuss guestbookinfo='{{guestbookinfo}}' />
+
+  <!-- tabbar -->
+  <v-tabbar />
+
+
+</view>

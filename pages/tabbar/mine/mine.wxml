@@ -1,0 +1,105 @@
+<!--pages/tabbar/mine/mine.wxml-->
+<view class='background' style='height:{{windowHeight+"px"}};'>
+  <!-- 背景 -->
+  <view class='mine_background'></view>
+
+  <!-- 用户信息 -->
+  <view class='mine_userInfo'>
+    <view class='mine_userInfoBox'>
+      <image class='userImage' src='/image/index_pic.png'></image>
+      <view class='userInfo'>
+        <text class='userName'>吟花入酒</text>
+        <!-- <text class='userPhoneNum'>尚未绑定手机号</text> -->
+        <text class='userPhoneNum'>17778213115</text>
+      </view>
+    </view>
+    <image class='userCode' src='/image/mine_code.png'></image>
+  </view>
+
+  <!-- 导航栏 -->
+  <view class='mine_nav'>
+    <view class='navItem' bindtap='publish'>
+      <image src='/image/mine_publish.png'></image>
+      <text>发布</text>
+    </view>
+    <view class='navItem' bindtap='published'>
+      <image src='/image/mine_published.png'></image>
+      <text>已发布</text>
+    </view>
+    <view class='navItem'>
+      <image src='/image/mine_collected.png'></image>
+      <text>收藏</text>
+    </view>
+    <view class='navItem'>
+      <image src='/image/mine_management.png'></image>
+      <text>管理</text>
+    </view>
+  </view>
+
+  <!-- 商家 -->
+  <view class='mine_merchant'>
+    <view class='merchantNav'>
+      <image src='/image/mine_wallet.png'></image>
+      <text>钱包</text>
+    </view>
+    <text class='walletPrice'>1000.00</text>
+  </view>
+
+  <!-- 地址及商家认证 -->
+  <view class='mine_addressBox'>
+    <view class='addressBox' bindtap='toAddress'>
+      <view class='addressNav'>
+        <image src='/image/mine_address.png'></image>
+        <text>地址</text>
+      </view>
+      <image class='mine_more' src='/image/mine_more.png'></image>
+    </view>
+    <view class='addressBox'>
+      <view class='addressNav'>
+        <image src='/image/mine_authentication.png'></image>
+        <text>商家认证</text>
+      </view>
+      <image class='mine_more' src='/image/mine_more.png'></image>
+    </view>
+  </view>
+
+
+
+  <!-- 发布弹出层 -->
+  <view class='publishBack' style='height:{{windowHeight+"px"}};' wx:if='{{isPublish}}'>
+    <view class='publishTier'>
+      <view class='publishTitle'>发布</view>
+      <view class='publishCon'>
+        <view class='publishBox'>
+          <view class='publishItem' data-publishEntry='1' bindtap='selectPublishEntry'>
+            <view class='{{publishEntry==1?"publishImageHover":"publishImage"}}'>
+              <image wx:if='{{publishEntry==1}}' src='/image/publishProductHover.png'></image>
+              <image wx:else src='/image/publishProduct.png'></image>
+            </view>
+            <text class='{{publishEntry==1?"publishItemTextHover":"publishItemText"}}'>发布产品</text>
+          </view>
+          <view class='publishItem' data-publishEntry='2' bindtap='selectPublishEntry'>
+            <view class='{{publishEntry==2?"publishImageHover":"publishImage"}}'>
+              <image wx:if='{{publishEntry==2}}' src='/image/publishCaseHover.png'></image>
+              <image wx:else src='/image/publishCase.png'></image>
+            </view>
+            <text class='{{publishEntry==2?"publishItemTextHover":"publishItemText"}}'>发布案例</text>
+          </view>
+          <view class='publishItem' data-publishEntry='3' bindtap='selectPublishEntry'>
+            <view class='{{publishEntry==3?"publishImageHover":"publishImage"}}'>
+              <image wx:if='{{publishEntry==3}}' src='/image/publishDemandHover.png'></image>
+              <image wx:else src='/image/publishDemand.png'></image>
+            </view>
+            <text class='{{publishEntry==3?"publishItemTextHover":"publishItemText"}}'>发布需求</text>
+          </view>
+        </view>
+      </view>
+      <view class='mine_btnBox'>
+        <view class='mine_btn cancel' bindtap='cancelPublish'>取消</view>
+        <view class='mine_btn submit' bindtap='submitPublish'>发布</view>
+      </view>
+    </view>
+  </view>
+
+
+</view>

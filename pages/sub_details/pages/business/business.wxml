@@ -1,0 +1,39 @@
+<!--pages/sub_details/pages/business/business.wxml-->
+<view class='background'>
+  
+   <!-- 搜索 -->
+  <v-search />
+
+  <!-- 轮播图 -->
+  <view class='index_slideshow'>
+    <v-swiper swiperpicinfo='{{indexpicinfo}}' />
+  </view>
+
+  <!-- 排序导航 -->
+  <v-order />
+
+  <!-- 商家列表 -->
+  <view class='businessList'>
+    <block wx:for='{{businessList}}' wx:key='key'>
+      <view class='businessItem' bindtap='jumpToBusiness'>
+        <image class='businessLogo' src='{{item.logo}}'></image>
+        <view class='businessCon'>
+          <view class='businessName'>
+            <text>{{item.name}}</text>
+            <image src='/image/business_authentication.png'></image>
+          </view>
+          <text class='businessDesc'>主营：{{item.con}}</text>
+          <view class='businessImageBox'>
+            <block wx:for='{{item.imageBox}}'>
+              <image src='{{item}}'></image>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+   <!-- 没有更多了 -->
+    <v-noMore />
+
+</view>

@@ -1,0 +1,42 @@
+/* components/uploadImage/index.wxss */
+
+.imageList{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imageBox{
+  position: relative;
+  margin-right: 9rpx;
+  margin-bottom: 10rpx;
+}
+
+.uploadImageItem{
+  width: 165rpx;
+  height: 165rpx;
+  border-radius: 8rpx;
+}
+
+.deleteImage{
+  width: 34rpx;
+  height: 34rpx;
+  position: absolute;
+  right: -5%;
+  top: -7%;
+}
+
+.uploadImage {
+  width: 165rpx;
+  height: 165rpx;
+  background: #fffcf8;
+  border: 1px solid #ccc;
+  border-radius: 8rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.uploadImage image{
+  width: 100rpx;
+  height: 92rpx;
+}

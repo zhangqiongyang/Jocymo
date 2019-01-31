@@ -1,0 +1,282 @@
+/* pages/tabbar/mine/mine.wxss */
+
+/* 背景 */
+
+.mine_background {
+  width: 100%;
+  height: 208rpx;
+  background: linear-gradient(to right, #ff6901, #fe872f);
+  position: absolute;
+}
+
+/* 用户信息 */
+
+.mine_userInfo {
+  width: 100%;
+  z-index: 1;
+  position: relative;
+  padding-top: 27rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mine_userInfoBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.userImage {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-left: 30rpx;
+  margin-right: 40rpx;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.userName {
+  font-size: 44rpx;
+  color: #fff;
+}
+
+.userPhoneNum {
+  font-size: 20rpx;
+  color: #fff;
+  padding-top: 18rpx;
+}
+
+.userCode {
+  width: 38rpx;
+  height: 38rpx;
+  padding-right: 30rpx;
+}
+
+/* 导航栏 */
+
+.mine_nav {
+  width: 690rpx;
+  height: 150rpx;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  background-color: #fff;
+  border-radius: 8px;
+  z-index: 1;
+  position: relative;
+  margin-top: 50rpx;
+}
+
+.navItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navItem image {
+  width: 58rpx;
+  height: 58rpx;
+}
+
+.navItem text {
+  font-size: 26rpx;
+  color: #666;
+}
+
+/* 商家 */
+
+.mine_merchant {
+  width: 690rpx;
+  height: 88rpx;
+  background: #fff;
+  border-radius: 8px;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mine_merchant text{
+  color: #FE6D08;
+}
+
+.merchantNav {
+  display: flex;
+  align-items: center;
+}
+
+.merchantNav image{
+  width: 42rpx;
+  height: 42rpx;
+  padding: 0 20rpx;
+}
+
+.walletPrice{
+  padding-right: 20rpx;
+}
+
+/* 收货地址及商家认证 */
+.mine_addressBox{
+  border-radius: 8px;
+  width: 690rpx;
+  margin: 20rpx auto 0;
+  background: #fff;
+}
+
+.addressBox{
+  width: 100%;
+  height: 88rpx;
+  border-bottom: 1px solid #DDDDDD; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addressBox text{
+  color: #333333;
+}
+
+.addressNav{
+  display: flex;
+  align-items: center;
+}
+
+.addressNav image{
+  width: 42rpx;
+  height: 42rpx;
+  padding: 0 20rpx;
+}
+
+.mine_more {
+  width: 15rpx;
+  height: 28rpx;
+  padding-right: 20rpx;
+}
+
+/* 发布弹出层 */
+
+.publishBack{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  /* background: #000000;
+  opacity:0.2; */
+}
+
+.publishTier{
+  width: 600rpx;
+  height: 454rpx;
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 8px;
+}
+
+.publishTitle{
+  width: 100%;
+  height: 64rpx;
+  background-color: #FF6901;
+  color: #fff;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  border-radius: 8px 8px 0 0;
+}
+
+.publishBox{
+  display: flex;
+  flex-direction: row;
+  margin: 50rpx auto;
+  width: 480rpx;
+  
+}
+
+.publishItem{
+  text-align: center;
+  padding: 0 10rpx;
+}
+
+.publishImage{
+  width:140rpx;
+  height: 140rpx;
+  border: 1px solid #DDDDDD;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.publishImage image{
+  width: 68rpx;
+  height: 68rpx;
+}
+
+.publishItemText{
+  font-size: 26rpx;
+  color: #666666;
+}
+
+.publishImageHover{
+  width:140rpx;
+  height: 140rpx;
+  border: 1px solid #FF6901;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.publishImageHover image{
+  width: 68rpx;
+  height: 68rpx;
+}
+
+.publishItemTextHover{
+  font-size: 26rpx;
+  color: #FF6901;
+}
+
+.mine_btnBox{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 372rpx;
+}
+
+.mine_btn{
+  width: 176rpx;
+  height: 68rpx;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.cancel{
+  background-color: #F6F6F6;
+  color: #666666;
+  margin-right: 20rpx;
+}
+
+.submit{
+  background-color: #FF6901;
+  color: #fff;
+}

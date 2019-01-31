@@ -1,0 +1,8 @@
+{
+  "usingComponents":{
+    "v-swiper":"/components/swiper/index",
+    "v-search": "/components/search/index",
+    "v-product": "/components/product/index",
+    "v-case": "/components/case/index"
+  }
+}

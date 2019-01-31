@@ -1,0 +1,23 @@
+<!--pages/sub_details/pages/product/product.wxml-->
+<view class='background'>
+  <!-- 搜索 -->
+  <v-search />
+
+  <!-- 轮播图 -->
+  <view class='index_slideshow'>
+    <v-swiper swiperpicinfo='{{indexpicinfo}}' />
+  </view>
+
+  <!-- 排序导航 -->
+  <v-order />
+  <!-- 产品列表 -->
+  <view class='productList'>
+    <block wx:for='{{productinfo}}' wx:key='key'>
+      <v-product productItem='{{item}}' class='productItem' />
+    </block>
+  </view>
+
+  <!-- 没有更多了 -->
+  <v-noMore />
+
+</view>

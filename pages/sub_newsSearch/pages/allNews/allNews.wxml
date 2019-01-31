@@ -1,0 +1,61 @@
+<!--pages/sub_newsSearch/pages/allNews/allNews.wxml-->
+<view class='background'>
+  <!-- 作者信息 -->
+  <view class='authorInfo' bindtap='jumpToAuthorDesc' data-author_id='{{authorinfo.author_id}}'>
+      <image class='authorBackground' src='/image/allNews_background.png'></image>
+    <view class='author'>
+      <!-- <image class='authorBackground' src='/image/allNews_background.png'></image> -->
+      <view class='authorImage'>
+        <image src='{{authorinfo.author_pic}}' mode='aspectFill'></image>
+      </view>
+      <view class='authorText'>
+        <text class='authorName'>{{authorinfo.author_name}}</text>
+        <text class='authorIntroduce'>{{authorinfo.author_desc}}</text>
+      </view>
+    </view>
+    <image class='checkMore' src='/image/allNews_more.png'></image>
+  </view>
+
+
+  <!-- 新闻列表 -->
+  <view class='news'>
+    <view class='listNav'>
+      <view class='navContent'>
+        <view class='navListOrder' bindtap='changeOrder'>
+          <!-- <view class='navListOrderImgBox'>
+            <view class='navListOrderImg'>
+            </view>
+          </view> -->
+          <image class='navListOrderImg' src='/image/allNews_order.png'></image>
+
+          <text class='navListOrderText' wx:if='{{order==0}}' data-order='1'>倒序</text>
+          <text class='navListOrderText' wx:if='{{order==1}}' data-order='0'>正序</text>
+        </view>
+        <text class='navContentText'>已更新{{authorinfo.countupdate}}讲</text>
+      </view>
+    </view>
+    <view class='newsList'>
+      <block wx:for='{{newsinfo}}' wx:key='key'>
+        <view class='newsItem' data-article_id='{{item.article_id}}' bindtap='jumpToNews'>
+          <!-- <view class='newsTitle'> -->
+          <text class='newsTitle'>{{item.article_title}}</text>
+          <!-- </view> -->
+          <view class='newsInfo'>
+            <view class='newsDesc'>
+              <view class='newsImageBox'>
+                <image src='/image/allNews_time.png'></image>
+                <text>{{item.publish_time}}</text>
+              </view>
+              <view class='newsImageBox'>
+                <!-- <image src='/image/allNewsEye.png'></image> -->
+                <text>{{item.browsecount}}阅读</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+
+  </view>
+
+</view>

@@ -1,0 +1,15 @@
+<!--components/search/index.wxml-->
+<view class='index_search'>
+  <view class='index_service'>
+    <button open-type='contact' class='index_service_button'></button>
+    <image class='index_service_img' src='/image/index_service.png' />
+    <text>客服</text>
+  </view>
+  <view class='index_search_input' bindtap='jumpToSearch'>
+    <image src='/image/index_search.png'></image>
+  </view>
+  <view class='index_service'>
+    <image class='index_service_img' src='/image/index_history.png' />
+    <text>历史</text>
+  </view>
+</view>

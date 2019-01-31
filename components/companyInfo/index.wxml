@@ -1,0 +1,16 @@
+<!--components/companyInfo/index.wxml-->
+  <view class='businessInfo'>
+    <image class='businessLogo' src='/image/index_pic.png'></image>
+    <view class='businessInfoBox'>
+      <text>北京建谊智慧互联科技发展有限公司</text>
+      <text class='businessDesc'>主营：建材、板材、防水</text>
+      <view class='businessAddress'>
+        <image src='/image/case_address.png'></image>
+        <text>北京市丰台区</text>
+      </view>
+      <view class='businessAddress'>
+        <image src='/image/case_phone.png'></image>
+        <text>13811560012</text>
+      </view>
+    </view>
+  </view>

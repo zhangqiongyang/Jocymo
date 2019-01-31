@@ -1,0 +1,19 @@
+/* pages/sub_details/pages/product/product.wxss */
+
+/* 轮播图 */
+.index_slideshow {
+  padding-top: 88rpx;
+  height: 375rpx;
+}
+
+
+.productList{
+  padding: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.productItem{
+  padding-bottom: 30rpx;
+}

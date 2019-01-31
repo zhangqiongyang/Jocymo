@@ -1,0 +1,6 @@
+<!--pages/sub_details/pages/disclaimer/disclaimer.wxml-->
+<view class='background'  style='height:{{windowHeight+"px"}};'>
+  <text class='disclaimerTitle'>招财猫免责声明</text>
+  <text class='disclaimerCon'>1.不可抗力：《合同法》第117条规定，因不可抗力不能履行合同的，根据不可抗力的影响，部分或者全部免除责任，但法律另有规定的除外。当事人延迟履行后发生不可抗力的，不能免除责任。本法所称不可抗力，是指不能预见、不能避免并不能克服的客观情况。</text>
+  <text class='disclaimerCon'>2.不可抗力：《合同法》第117条规定，因不可抗力不能履行合同的，根据不可抗力的影响，部分或者全部免除责任，但法律另有规定的除外。当事人延迟履行后发生不可抗力的，不能免除责任。本法所称不可抗力，是指不能预见、不能避免并不能克服的客观情况。</text>
+</view>

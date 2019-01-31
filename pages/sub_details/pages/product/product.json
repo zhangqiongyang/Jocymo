@@ -1,0 +1,12 @@
+{
+    "usingComponents": {
+      "v-swiper": "/components/swiper/index",
+      "v-search": "/components/search/index",
+      "v-noMore": "/components/noMore/index",
+      "v-order": "/components/order/index",
+      "v-tabbar": "/components/tabbar/index",
+      "v-discuss": "/components/discuss/index",
+      "v-companyInfo": "/components/companyInfo/index",
+      "v-product": "/components/product/index"
+    }
+}

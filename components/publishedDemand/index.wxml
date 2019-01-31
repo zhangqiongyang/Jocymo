@@ -1,0 +1,18 @@
+<!--components/publishDemand/index.wxml-->
+<view class='demandItem'>
+  <image class='demandImage' src='{{publishedDemand.image}}'></image>
+  <image wx:if='{{publishedDemand.yiwancheng==1}}' class='publishedImage' src='/image/published_published.png'></image>
+  <view class='demandInfo'>
+    <text class='demandName'>{{publishedDemand.name}}</text>
+    <view class='demandNumBox'>
+      <view class='demandNumItem'>
+        <text class=''>查看</text>
+        <text>{{publishedDemand.chakan}}</text>
+      </view>
+      <view class='demandNumItem'>
+        <text>投标</text>
+        <text class='color'>{{publishedDemand.toubiao}}</text>
+      </view>
+    </view>
+  </view>
+</view>

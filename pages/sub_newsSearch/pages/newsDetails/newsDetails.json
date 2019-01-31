@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-tabbar": "/components/tabbar/index",
+    "v-discuss": "/components/discuss/index"
+  }
+}

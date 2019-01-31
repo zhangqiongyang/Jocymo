@@ -1,0 +1,65 @@
+/* components/publishDemand/index.wxss */
+.demandItem {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.demandImage {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 8rpx;
+}
+
+.demandInfo {
+  width: 485rpx;
+  padding-left: 24rpx;
+}
+
+.demandName {
+  font-size: 26rpx;
+  display: -webkit-box;
+  line-height: 40rpx;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.color{
+  color:#FF6901 !important;
+}
+
+.demandNumBox{
+  padding-top: 52rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.demandNumItem{
+  padding: 0 22rpx;
+}
+
+.demandNumItem text{
+  font-size: 20rpx;
+  color: #999999;
+  padding: 0 5rpx;
+}
+
+.publishedImage{
+  width: 101rpx;
+  height: 101rpx;
+  z-index: 9;
+  position: absolute;
+  right: 0;
+  padding-top: 20rpx;
+  padding-right: 30rpx;
+}
+
+.demandList {
+  margin-top: 26rpx;
+}

@@ -1,0 +1,145 @@
+/* pages/sub_details/pages/published/published.wxss */
+
+/* 已发布的分类 */
+
+.publishedClassify {
+  width: 100%;
+  padding: 0 30rpx;
+  height: 88rpx;
+  display: flex;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.classify {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: #666;
+}
+
+.classifyHover {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: #ff6901;
+  border-bottom: 4rpx solid #ff6901;
+}
+
+/* 已发布的列表 */
+
+/* 已发布的需求列表 */
+
+
+
+
+
+/* 已发布的产品列表 */
+
+.productList {
+  padding: 30rpx 20rpx 60rpx 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.color{
+  color:#FF6901 !important;
+}
+
+
+/* 删除弹窗 */
+
+.deleteBack {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.49);
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.deleteTier {
+  width: 590rpx;
+  height: 290rpx;
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+}
+
+.deleteTitle{
+  font-weight: bold;
+  padding-top: 50rpx;
+  padding-bottom: 40rpx;
+  display: block;
+  text-align: center;
+}
+
+/* .buy{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.buy_checkBox {
+  width: 24rpx;
+  height: 24rpx;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4rpx;
+}
+
+.buy image {
+  width: 28rpx;
+  height: 28rpx;
+}
+
+.buyText{
+  padding-left: 20rpx;
+  color: #666666;
+  font-size: 24rpx;
+}
+
+.color{
+  color: #0196FF;
+} */
+
+.mine_btnBox{
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 372rpx;
+  padding-top: 30rpx;
+}
+
+.mine_btn{
+  width: 176rpx;
+  height: 68rpx;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.cancel{
+  background-color: #F6F6F6;
+  color: #666666;
+  margin-right: 20rpx;
+}
+
+.submit{
+  background-color: #FF6901;
+  color: #fff;
+}
+

@@ -1,0 +1,19 @@
+<!--pages/sub_newsSearch/pages/authorDetails/authorDetails.wxml-->
+<import src="/wxParse/wxParse.wxml" />
+
+<view>
+  <view class='authorDescBox'>
+      <image class='authorBackground' src='/image/allNews_background.png'></image>
+    <view class='author'>
+      <view class='authorImage'>
+        <image src='{{authorinfo.author_pic}}' mode='aspectFill'></image>
+      </view>
+      <view class='authorText'>
+        <text class='authorName'>{{authorinfo.author_name}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='authorInfoBox'>
+    <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+  </view>
+</view>

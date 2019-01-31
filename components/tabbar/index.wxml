@@ -1,0 +1,11 @@
+<!--components/tabbar/index.wxml-->
+<view class='tabbar'>
+  <view class='discussWrite' bindtap='toMessage'>
+    <image src='/image/tabbar_write.png'></image>
+    <text>写评论</text>
+  </view>
+  <view class='shareBox'>
+    <image src='/image/tabbar_like.png'></image>
+    <image src='/image/tabbar_share.png'></image>
+  </view>
+</view>

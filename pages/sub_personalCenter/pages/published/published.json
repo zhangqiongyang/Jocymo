@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "v-noMore": "/components/noMore/index",
+    "v-publishedDemand": "/components/publishedDemand/index",
+    "v-publishedProduct": "/components/publishedProduct/index"
+  }
+}

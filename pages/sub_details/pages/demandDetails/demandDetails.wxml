@@ -1,0 +1,64 @@
+<!--pages/sub_details/pages/demandDetails/demandDetails.wxml-->
+<view class='background'>
+    <!-- 轮播图 -->
+  <view class='index_slideshow'>
+    <v-swiper swiperpicinfo='{{indexpicinfo}}' />
+  </view>
+
+  <!-- 案例信息 -->
+  <view class='demandName'>仿江南水乡园林设计</view>
+
+  <!-- 需求描述 -->
+  <view class='demandDescription'>
+    <view class='demandDescriptionTitle'>
+      <text>需求描述</text>
+    </view>
+    <view class='demandDescriptionList'>
+      <text class='descriptionCon'>建谊牌彩板，荣获国家一级发明设计奖，通过国家ISO9001质量认证体系，可符合各种常见地形使用。美观大方。欢迎新老用户前来咨询。</text>
+      <view class='demandDescriptionItem'>
+        <text class='descriptionItem'>需求数量</text>
+        <text class='descriptionDetails'>300</text>
+      </view>
+      <view class='demandDescriptionItem'>
+        <text class='descriptionItem'>需求预算</text>
+        <text class='descriptionDetails'>100-500元</text>
+      </view>
+      <view class='demandDescriptionItem'>
+        <text class='descriptionItem'>项目地址</text>
+        <text class='descriptionDetails'>山东省-济南市-槐荫区</text>
+      </view>
+      <view class='demandDescriptionItem'>
+        <text class='descriptionItem'>其他描述</text>
+        <text class='descriptionDetails'>彩板吸水性强，可适合多种地板装修彩板吸水性强，可适合多 种地板装修彩板吸水性强，可适合多种地板装修.</text>
+      </view>
+      <view class='demandDescriptionItem getPhone'>
+        <text class='descriptionItem'>电话联系</text>
+        <view class='btn_buy' bindtap='toBuy'>点此获取</view>
+      </view>
+    </view>
+  </view>
+
+    <!-- 评论 -->
+  <v-discuss  guestbookinfo='{{guestbookinfo}}' />
+
+  <!-- tabbar -->
+  <v-tabbar />
+
+  <!-- 购买弹窗 -->
+  <view class='buyBack' wx:if='{{isBuy}}'>
+    <view class='buyTier'>
+      <text class='buyTitle'>支付9.9获取需求方手机号</text>
+      <view class='buy'>
+        <view wx:if='{{isSelected}}' bindtap='selectStatement' class='buy_checkBox'></view>
+        <image wx:else bindtap='selectStatement' src='/image/buy_hover.png'></image>
+        <text class='buyText'>招财猫需求购买</text>
+        <text bindtap='toDisclaimer' class='buyText color'>《免责声明》</text>
+      </view>
+      <view class='mine_btnBox'>
+        <view class='mine_btn cancel' bindtap='cancelBuy'>取消</view>
+        <view class='mine_btn submit' bindtap='buy'>发布</view>
+      </view>
+    </view>
+  </view>
+
+</view>

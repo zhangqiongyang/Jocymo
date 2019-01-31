@@ -1,0 +1,12 @@
+<!--components/uploadImage/index.wxml-->
+<view class='imageList'>
+  <block wx:for='{{imageList}}' wx:key='key'>
+    <view class='imageBox'>
+      <image class='uploadImageItem' src='{{item}}'></image>
+      <image class='deleteImage' src='/image/publishDemand_delete.png'></image>
+    </view>
+  </block>
+  <view class='uploadImage' bindtap='uploadImage'>
+    <image src='/image/publishDemand_imageUpload.png'></image>
+  </view>
+</view>

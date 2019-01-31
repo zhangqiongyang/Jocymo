@@ -1,0 +1,101 @@
+/* pages/tabbar/selectMaterial/selectMaterial.wxss */
+
+.contentBox {
+  display: flex;
+  flex-direction: row;
+  padding-top: 88rpx;
+}
+
+/* 左侧导航栏 */
+
+.left_box {
+  width: 220rpx;
+  background-color: #f6f6f6;
+}
+
+.left_item {
+  width: 100%;
+  height: 68rpx;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30rpx;
+}
+
+.left_item_select {
+  height: 68rpx;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #fff;
+  margin-top: 30rpx;
+  font-weight: bold;
+}
+
+.left_selectedLine {
+  width: 10rpx;
+  height: 26rpx;
+  background-color: #ff6901;
+  margin-right: 45rpx;
+}
+
+/* 右侧内容 */
+
+.right_box{
+  height: 1020rpx;
+  width: 530rpx;
+}
+
+/* 轮播图 */
+
+.index_slideshow {
+  width: 470rpx;
+  height: 236rpx;
+  border-radius: 8rpx;
+  margin: 0 auto;
+  padding-top: 30rpx;
+}
+
+/* 主体内容 */
+
+.right_item {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+}
+
+.twoItem_title {
+  font-size: 26rpx;
+  padding-top: 30rpx;
+  padding-bottom: 10rpx;
+}
+
+.threeItem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.threeItemBox {
+  width: 140rpx;
+  padding-top: 20rpx;
+}
+
+.threeItemBox image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 8rpx;
+}
+
+.threeItemBox text {
+  font-size: 20rpx;
+  line-height: 26rpx;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

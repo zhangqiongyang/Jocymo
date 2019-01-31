@@ -1,0 +1,98 @@
+/* pages/tabbar/index/index.wxss */
+
+/* 搜索框 */
+
+
+/* 轮播图 */
+.index_slideshow {
+  padding-top: 88rpx;
+  height: 375rpx;
+}
+
+
+/* 新闻速报 */
+
+.index_area {
+  margin-top: 20rpx;
+}
+
+.index_area_title {
+  height: 88rpx;
+  width: 100%;
+  border-bottom: 1px solid #eaeaea;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 28rpx;
+  box-sizing: border-box;
+}
+
+.index_area_title text {
+  font-weight: bold;
+  font-size: 34rpx;
+}
+
+.index_area_title image {
+  width: 44rpx;
+  height: 44rpx;
+  padding: 28rpx;
+}
+
+.newsList {
+  padding: 30rpx;
+}
+
+.newsCon {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.newsListImg {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.newsListText {
+  display: inline-block;
+  line-height: 62rpx;
+  padding-left: 20rpx;
+  font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* 厂商汇集 */
+
+.manufacturerList {
+  height: 286rpx;
+}
+
+.manufacturerItem {
+  display: inline-block;
+  width: 190rpx;
+  text-align: center;
+  padding: 10rpx;
+}
+
+.manufacturerItem image {
+  width: 190rpx;
+  height: 190rpx;
+  border-radius: 8px;
+}
+
+.manufacturerItem text {
+  display: block;
+  font-size: 26rpx;
+}
+
+/* 热案推荐 */
+.caseList{
+  padding: 0 30rpx;
+}
+
+/* 优材推荐 */
+.productItem{
+  margin-right: 20rpx;
+}

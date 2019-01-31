@@ -1,0 +1,72 @@
+<!--pages/sub_details/pages/published/published.wxml-->
+<view class='background'>
+
+  <!-- 已发布的分类 -->
+  <view class='publishedClassify'>
+    <view bindtap='changepublishedTitle' data-publishedtitle='0' class='{{publishedTitleItem == 0?"classifyHover":"classify"}}'>需求</view>
+    <view bindtap='changepublishedTitle' data-publishedtitle='1' class='{{publishedTitleItem == 1?"classifyHover":"classify"}}'>产品</view>
+    <view bindtap='changepublishedTitle' data-publishedtitle='2' class='{{publishedTitleItem == 2?"classifyHover":"classify"}}'>案例</view>
+  </view>
+
+
+  <!-- 已发布的列表 -->
+  <view class='publishedList'>
+    <!-- 已发布的需求列表 -->
+    <view wx:if='{{publishedTitleItem == 0}}'>
+      <view class='publishedClassify'>
+        <view bindtap='changeDemandTitle' data-demandtitle='0' class='{{demandTitleItem == 0?"classifyHover":"classify"}}'>进行中</view>
+        <view bindtap='changeDemandTitle' data-demandtitle='1' class='{{demandTitleItem == 1?"classifyHover":"classify"}}'>已完成</view>
+      </view>
+      <view class='demandList'>
+        <view wx:if='{{demandTitleItem == 0}}'>
+          <block wx:for='{{demandList}}'>
+            <v-publishedDemand publishedDemand='{{item}}' />
+          </block>
+        </view>
+
+        <view wx:if='{{demandTitleItem == 1}}'>
+          <block wx:for='{{demandListOver}}'>
+            <v-publishedDemand publishedDemand='{{item}}' />
+          </block>
+        </view>
+
+        <!-- 没有更多了 -->
+        <v-noMore />
+      </view>
+    </view>
+
+    <!-- 已发布的产品列表 -->
+    <view class='productList' wx:if='{{publishedTitleItem == 1}}'>
+      <block wx:for='{{productList}}' wx:key='key'>
+        <v-publishedProduct published='{{item}}' />
+      </block>
+      <!-- 没有更多了 -->
+      <v-noMore />
+    </view>
+
+    <!-- 已发布的案例列表 -->
+    <view class='productList' wx:if='{{publishedTitleItem == 2}}'>
+      <block wx:for='{{caseList}}' wx:key='key'>
+        <v-publishedProduct published='{{item}}' />
+      </block>
+      <!-- 没有更多了 -->
+      <v-noMore />
+    </view>
+
+
+
+  </view>
+
+
+  <!-- 删除弹窗 -->
+  <view class='deleteBack' wx:if='{{isDelete}}'>
+    <view class='deleteTier'>
+      <text class='deleteTitle'>{{deleteText}}</text>
+      <view class='mine_btnBox'>
+        <view class='mine_btn cancel' bindtap='cancelDelete'>取消</view>
+        <view class='mine_btn submit' bindtap='deleteItem'>确定</view>
+      </view>
+    </view>
+  </view>
+
+</view>

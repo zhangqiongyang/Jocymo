@@ -1,0 +1,81 @@
+/* components/demand/index.wxss */
+.demandItem {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx 0;
+}
+
+.demandImage {
+  width: 180rpx;
+  height: 180rpx;
+  position: relative;
+}
+
+.demandImage image{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 8px;
+}
+
+.demandtag{
+  width: 60rpx;
+  height: 30rpx;
+  border-radius: 0 12px 12px 0;
+  color: #fff;
+  font-size: 18rpx;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  margin-top: 10rpx;
+}
+
+.urgent{
+  background-color: #FC5421;
+}
+
+.middle{
+  background-color: #FFB401;
+}
+
+.unhurried{
+  background-color: #87D575;
+}
+
+.demandInfo{
+  padding-left: 22rpx;
+}
+
+.demandName{
+  color: #333333;
+  font-size: 26rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.demandAddress{
+  font-size: 24rpx;
+  color: #666666;
+  padding-top: 40rpx;
+}
+
+.demandAddress text{
+  color: #333333;
+  font-size: 24rpx;
+}
+
+.demandPrice{
+  font-size: 24rpx;
+  color: #666666;
+  padding-top: 20rpx;
+}
+
+.demandPrice text{
+  color: #FF6901;
+}

@@ -1,0 +1,124 @@
+/* components/discuss/index.wxss */
+.discuss{
+  background-color: #ffffff;
+  margin-top: 20rpx;
+}
+
+.discussTitle {
+  width: 100%;
+  height: 88rpx;
+  border-bottom: 1px solid #ddd;
+}
+
+.discussTitle text {
+  height: 84rpx;
+  display: flex;
+  align-items: center;
+  width: 100rpx;
+  border-bottom: 4px solid #ff6901;
+  margin-left: 30rpx;
+  justify-content: center;
+  font-weight: 500;
+}
+
+/* 精选留言 */
+
+.articleMessage {
+  margin-top: 70rpx;
+  padding-bottom: 98rpx;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.msgTitle {
+  height: 110rpx;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.msgTitle text {
+  text-align: center;
+  font-size: 34rpx;
+}
+
+.article_msg_line {
+  width: 280rpx;
+  height: 1px;
+}
+
+.msgContent {
+  padding: 20rpx 30rpx 40rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.msgUserImg {
+  width: 60rpx;
+  height: 60rpx;
+  /* float: left; */
+}
+
+.msgUserImg image {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+
+.msgText {
+  /* float: left; */
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.msgHead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.msgUserName {
+  font-size: 26rpx;
+  padding-top: 10rpx;
+}
+
+.msg {
+  color: #666;
+  font-size: 22rpx;
+  /* padding-top: 34rpx; */
+}
+
+.msgTime {
+  color: #afafaf;
+  font-size: 20rpx;
+  padding-top: 18rpx;
+}
+
+.msgLikeGroup {
+  /* float: right; */
+  width: 100rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 34rpx;
+}
+
+.msgLike {
+  /* padding-top: 10rpx; *//* padding-right: 30rpx; */
+  padding-right: 20rpx;
+  width: 22rpx;
+  height: 22rpx;
+}
+
+.likeNum {
+  color: #666;
+  /* font-size: 30rpx; */
+  font-size: 22rpx;
+}

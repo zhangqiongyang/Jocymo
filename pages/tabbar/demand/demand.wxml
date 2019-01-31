@@ -1,0 +1,36 @@
+<!--pages/tabbar/demand/demand.wxml-->
+<view class='background'>
+   <!-- 搜索 -->
+  <v-search />
+
+
+  <!-- 轮播图 -->
+  <view class='index_slideshow'>
+    <v-swiper swiperpicinfo='{{indexpicinfo}}' />
+  </view>
+
+  <!-- 排序导航 -->
+  <v-order />
+
+  <!-- 需求列表 -->
+  <view class='demandList'>
+    <block wx:for='{{demandList}}' wx:key='key'>
+      <v-demand  demandItem='{{item}}'/>
+    </block>
+
+
+
+  
+  </view>
+
+
+  <!-- 没有更多了 -->
+  <view  class='noMore'>
+    <v-noMore />
+  
+  </view>
+
+
+
+
+</view>

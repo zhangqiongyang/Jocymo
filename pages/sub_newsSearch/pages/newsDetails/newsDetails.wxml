@@ -1,0 +1,114 @@
+<!--pages/sub_newsSearch/pages/newsDetails/newsDetails.wxml-->
+
+
+<import src="/wxParse/wxParse.wxml" />
+
+<view>
+
+
+  <!-- 视频 -->
+
+  <video wx:if="{{isHaveVideo}}" id="myVideo" class='video' src="{{articleinfo.video_url}}" binderror="videoErrorCallback" controls custom-cache="{{false}}">
+    <cover-view wx:if='{{!buy}}' class='mask' bindtap='jumpToBuy'>解锁当前课程</cover-view>
+  </video>
+  <!-- <view wx:if="{{isHaveVideo}}" class='video_placeholder'></view> -->
+
+
+
+
+  <!-- 文章主体 -->
+
+  <scroll-view  scroll-y class='videoContent' style='{{isHaveVideo?"height:680rpx":"height:{{windowHeight}}"}}'>
+
+
+  <!-- 文章标题 -->
+  <view class='articleTitle'>
+    <text class='article_title'>{{articleinfo.article_title}}</text>
+    <view class='article_articleInfo'>
+      <image class='article_authorImg' src='{{authorinfo.author_pic}}' mode='aspectFill'></image>
+      <view class='article_authorInfo'>
+        <text class='article_author'>{{authorinfo.author_name}}</text>
+        <text class='article_time'>{{authorinfo.company}}</text>
+      </view>
+    </view>
+  </view>
+
+
+
+  <!-- 音频播放器 -->
+  <view class='articleAudio' wx:if="{{isHaveAudio}}">
+
+    <view class='audio_mask' wx:if='{{!buy}}'  bindtap='jumpToBuy'>解锁当前课程</view>
+
+
+    <!--当前为停止状态  -->
+    <view class='player' wx:if="{{isplay==false}}">
+      <view class='playerIcon' bindtap='play'>
+        <image class='playStop' src='/image/article_play.png'></image>
+      </view>
+      <view class='playerInfo'>
+        <text class='player_article_title'>{{articleinfo.article_title}}</text>
+        <view class='player_article_audioInfo'>
+          <text class='player_article_declaimer'>朗读人：{{articleinfo.audio_read}}</text>
+          <text class='player_article_time'>{{minute}}'{{second}}''</text>
+          <image src='/image/acticle_line.png'></image>
+          <text class='player_article_size'>{{articleinfo.audio_size}}M</text>
+        </view>
+      </view>
+      <!-- <view class='playerDown'>
+        <image src='/image/article_down.jpg'></image>
+      </view> -->
+    </view>
+    <!--当前为播放状态  -->
+    <view class='player' wx:if="{{isplay==true}}">
+      <view class='playerIcon' bindtap='pause'>
+        <image class='playStop' src='/image/article_stop.png'></image>
+      </view>
+      <view class='playerInfo'>
+        <text class='player_article_title'>{{articleinfo.article_title}}</text>
+        <view class='player_article_audioInfo'>
+          <text class='player_article_declaimer'>朗读人：{{articleinfo.audio_read}}</text>
+          <text class='player_article_time'>{{minute}}'{{second}}''</text>
+          <image src='/image/acticle_line.png'></image>
+          <text class='player_article_size'>{{articleinfo.audio_size}}M</text>
+        </view>
+      </view>
+      <!-- <view class='playerDown'>
+        <image src='/image/article_down.png'></image>
+      </view> -->
+    </view>
+  </view>
+
+
+
+
+  <!-- 文章主体 -->
+  <view class='articleContent'>
+    <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+  </view>
+
+
+
+
+
+
+
+
+  <!-- 评论 -->
+  <v-discuss class='discuss'  guestbookinfo='{{guestbookinfo}}' />
+
+
+  </scroll-view>
+
+
+
+
+  <!-- tabbar -->
+  <v-tabbar />
+
+
+
+
+
+
+</view>

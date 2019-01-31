@@ -1,0 +1,19 @@
+/* pages/tabbar/demand/demand.wxss */
+
+
+/* 轮播图 */
+.index_slideshow {
+  padding-top: 88rpx;
+  height: 375rpx;
+}
+
+.demandList {
+  margin-top: 20rpx;
+  padding: 10rpx 30rpx 0 30rpx;
+  background-color: #fff;
+}
+
+
+.noMore{
+  background-color: #fff;
+}
