@@ -1,0 +1,2 @@
+/* pages/sub_personalCenter/pages/publishProduct/publishProduct.wxss */
+@import '../publishBussiness/publishBussiness.wxss';

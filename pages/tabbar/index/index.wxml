@@ -6,7 +6,7 @@
 
   <!-- 轮播图 -->
   <view class='index_slideshow'>
-    <v-swiper swiperpicinfo='{{indexpicinfo}}' />
+    <v-swiper swiperpicinfo='{{indexPicInfo}}' />
   </view>
 
 
@@ -19,9 +19,9 @@
 
     <view class='newsList'>
       <block wx:for='{{newsinfo}}' wx:key='key'>
-        <view class='newsCon' bindtap='jumpToNews' data-article_id='{{item.article_id}}'>
+        <view class='newsCon' bindtap='jumpToNews' data-news_id='{{item.news_id}}'>
           <image class='newsListImg' src='/image/index_news_play.png'></image>
-          <text class='newsListText'>{{item.article_title}}</text>
+          <text class='newsListText'>{{item.news_title}}</text>
         </view>
       </block>
     </view>
@@ -38,11 +38,11 @@
     </view>
 
     <view class='manufacturerList'>
-      <scroll-view scroll-x style='white-space: nowrap;padding:30rpx 20rpx;'>
-        <block wx:for='{{manufacturerList}}' wx:key='key'>
-          <view class='manufacturerItem' bindtap='jumpToBusiness'>
-            <image src='{{item.manufacturer_pic}}'></image>
-            <text>{{item.manufacturer_text}}</text>
+      <scroll-view scroll-x style='white-space: nowrap;padding:30rpx 20rpx;  box-sizing: border-box;'>
+        <block wx:for='{{firstTypeInfo}}' wx:key='key'>
+          <view class='manufacturerItem' bindtap='jumpToBusiness' data-id='{{item.jocymo_first_id}}'>
+            <image src='{{item.pic_url}}' mode="aspectFill"></image>
+            <text>{{item.jocymo_first_name}}</text>
           </view>
         </block>
       </scroll-view>
@@ -58,7 +58,7 @@
       <image src='/image/index_more.png' bindtap='jumpToAllCase'></image>
     </view>
     <view class='caseList'>
-      <block wx:for='{{caseList}}' wx:key='key'>
+      <block wx:for='{{caseInfo}}' wx:key='key'>
         <v-case caseItem='{{item}}' />
       </block>
     </view>
@@ -72,8 +72,8 @@
       <image src='/image/index_more.png' bindtap='jumpToAllProduct'></image>
     </view>
     <view class='optimalMaterial'>
-      <scroll-view scroll-x style='white-space: nowrap;padding:30rpx 20rpx;'>
-        <block wx:for='{{optimalMaterialList}}' wx:key='key'>
+      <scroll-view scroll-x style='white-space: nowrap;padding:30rpx 20rpx;  box-sizing: border-box;'>
+        <block wx:for='{{productInfo}}' wx:key='key'>
           <v-product productItem='{{item}}' class='productItem'/>
         </block>
       </scroll-view>

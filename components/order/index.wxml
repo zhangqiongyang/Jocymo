@@ -1,19 +1,17 @@
 <!--components/order/index.wxml-->
 <view class='caseNav'>
   <view class='caseSortordBox'>
-    <text class='caseSortordItem'>综合</text>
-    <text class='caseSortordItem'>评价</text>
-    <view class='timeSortord'>
-      <text>时间</text>
-      <view class='caseOrderBox'>
+    <text class='{{order_sort == "1"?"caseSortordItem_active":"caseSortordItem"}}' bindtap='changeOrderType' data-id='1'>综合</text>
+    <text class='{{order_sort == "2"?"caseSortordItem_active":"caseSortordItem"}}' bindtap='changeOrderType' data-id='2'>评价</text>
+    <view class='timeSortord' bindtap='changeOrderType' data-id='3'>
+      <text class='{{order_sort == "3"?"caseSortordItem_active":"caseSortordItem"}}'>时间</text>
+      <!-- <view class='caseOrderBox'>
         <image src='/image/case_orderUp.png' style='padding-bottom:2px;'></image>
         <image src='/image/case_orderDown.png'></image>
-      </view>
+      </view> -->
     </view>
   </view>
-  <!-- <view class='caseFiltrate'>
-    
-  </view> -->
+ 
   <picker class='caseFiltrate' mode='region' value='{{address}}' bindchange='addressChange' bindcancel='addressCancel'>
     <text>筛选</text>
     <image src='/image/case_filtrate.png'></image>

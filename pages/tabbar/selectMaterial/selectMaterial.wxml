@@ -7,31 +7,31 @@
   <view class='contentBox'>
     <!-- 侧边栏 -->
     <view class='left_box'>
-      <block wx:for='{{materialClassify}}' wx:key='key'>
-        <view class='{{firstId==item.id?"left_item_select":"left_item"}}' bindtap='selectFirstClasify' data-id='{{item.id}}'>
-          <view wx:if='{{firstId==item.id}}' class='left_selectedLine'></view>
-          场平功能
+      <block wx:for='{{firstTypeInfo}}' wx:key='key'>
+        <view class='{{firstType_id==item.jocymo_first_id?"left_item_select":"left_item"}}' bindtap='selectFirstClasify' data-id='{{item.jocymo_first_id}}'>
+          <view wx:if='{{firstType_id==item.jocymo_first_id}}' class='left_selectedLine'></view>
+          <text>{{item.jocymo_first_name}}</text>
         </view>
       </block>
     </view>
     <!-- 内容 -->
-    <scroll-view scroll-y class='right_box'>
+    <scroll-view scroll-y class='right_box' style='height:{{windowHeight +"px"}}'>
       <!-- 轮播图 -->
       <view class='index_slideshow'>
-        <v-swiper swiperpicinfo='{{sliderShow}}' />
+        <v-swiper swiperpicinfo='{{firstTypePicsInfo}}' />
       </view>
 
       <view class='right_item'>
-        <block wx:for='{{twoItem}}' wx:key='key'>
+        <block wx:for='{{twoTypeInfo}}' wx:key='key'>
           <view>
             <view class='twoItem_title'>
-              场平布置
+              {{item.jocymo_two_name}}
             </view>
             <view class='threeItem'>
-              <block wx:for='{{item.threeItem}}' wx:key='key'>
-                <view class='threeItemBox' bindtap='jumpToProduct'>
-                  <image src='{{item.img}}' mode='aspectFill'></image>
-                  <text>{{item.text}}</text>
+              <block wx:for='{{item.threeTypeInfo}}' wx:key='key'>
+                <view class='threeItemBox' bindtap='jumpToProduct' data-id='{{item.jocymo_three_id}}'>
+                  <image src='{{item.jocymo_three_pic_url}}' mode='aspectFill'></image>
+                  <text>{{item.jocymo_three_name}}</text>
                 </view>
               </block>
             </view>

@@ -54,6 +54,7 @@
 }
 
 .newsListText {
+  width: 638rpx;
   display: inline-block;
   line-height: 62rpx;
   padding-left: 20rpx;

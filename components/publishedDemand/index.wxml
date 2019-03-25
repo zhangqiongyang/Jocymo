@@ -1,17 +1,17 @@
 <!--components/publishDemand/index.wxml-->
-<view class='demandItem'>
-  <image class='demandImage' src='{{publishedDemand.image}}'></image>
-  <image wx:if='{{publishedDemand.yiwancheng==1}}' class='publishedImage' src='/image/published_published.png'></image>
+<view class='demandItem'  bindtap='toChangeDemand' data-id='{{publishedDemand.demand_id}}' data-demand_status='{{publishedDemand.demand_status}}'>
+  <image class='demandImage' src='{{publishedDemand.pic_url}}' mode="aspectFill"></image>
+  <image wx:if='{{publishedDemand.demand_status==2}}' class='publishedImage' src='/image/published_published.png'></image>
   <view class='demandInfo'>
-    <text class='demandName'>{{publishedDemand.name}}</text>
+    <text class='demandName'>{{publishedDemand.demand_name}}</text>
     <view class='demandNumBox'>
       <view class='demandNumItem'>
         <text class=''>查看</text>
-        <text>{{publishedDemand.chakan}}</text>
+        <text>{{publishedDemand.browseNum}}</text>
       </view>
       <view class='demandNumItem'>
         <text>投标</text>
-        <text class='color'>{{publishedDemand.toubiao}}</text>
+        <text class='color'>{{publishedDemand.buyNum}}</text>
       </view>
     </view>
   </view>

@@ -6,26 +6,26 @@
 
   <!-- 轮播图 -->
   <view class='index_slideshow'>
-    <v-swiper swiperpicinfo='{{indexpicinfo}}' />
+    <v-swiper swiperpicinfo='{{bannerPicsInfo}}' />
   </view>
 
   <!-- 排序导航 -->
-  <v-order />
+  <v-order  bind:changeOrder='changeOrder' bind:changeAddress='changeAddress'/>
 
   <!-- 商家列表 -->
   <view class='businessList'>
     <block wx:for='{{businessList}}' wx:key='key'>
-      <view class='businessItem' bindtap='jumpToBusiness'>
-        <image class='businessLogo' src='{{item.logo}}'></image>
+      <view class='businessItem' bindtap='jumpToBusiness' data-id='{{item.merchant_id}}'>
+        <image class='businessLogo' src='{{item.logo_url}}' mode="aspectFill"></image>
         <view class='businessCon'>
           <view class='businessName'>
-            <text>{{item.name}}</text>
+            <text>{{item.merchant_name}}</text>
             <image src='/image/business_authentication.png'></image>
           </view>
-          <text class='businessDesc'>主营：{{item.con}}</text>
+          <text class='businessDesc'>主营：{{item.merchant_operation}}</text>
           <view class='businessImageBox'>
-            <block wx:for='{{item.imageBox}}'>
-              <image src='{{item}}'></image>
+            <block wx:for='{{item.mercahnt_pic_url}}'>
+              <image src='{{item.pic_url}}' mode="aspectFill"></image>
             </block>
           </view>
         </view>

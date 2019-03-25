@@ -5,14 +5,15 @@
 
   <!-- 轮播图 -->
   <view class='index_slideshow'>
-    <v-swiper swiperpicinfo='{{indexpicinfo}}' />
+    <v-swiper swiperpicinfo='{{bannerPicsInfo}}' />
   </view>
 
   <!-- 排序导航 -->
-  <v-order />
+  <v-order bind:changeOrder='changeOrder' bind:changeAddress='changeAddress'/>
+  
   <!-- 产品列表 -->
   <view class='productList'>
-    <block wx:for='{{productinfo}}' wx:key='key'>
+    <block wx:for='{{productInfo}}' wx:key='key'>
       <v-product productItem='{{item}}' class='productItem' />
     </block>
   </view>

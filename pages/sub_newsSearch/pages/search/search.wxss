@@ -83,3 +83,7 @@
   flex-wrap: wrap;
   padding: 30rpx;
 }
+
+.productItem{
+  margin-top: 30rpx;
+}

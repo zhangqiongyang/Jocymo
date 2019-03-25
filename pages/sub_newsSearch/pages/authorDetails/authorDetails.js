@@ -1,10 +1,24 @@
 // pages/sub_newsSearch/pages/authorDetails/authorDetails.js
+
+import {
+  HTTP
+} from '../../../../utils/http-p.js'
+let http = new HTTP()
+
+import {
+  config
+} from '../../../../config.js'
+
+
+var WxParse = require('../../../../wxParse/wxParse.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    author_id:1,
     authorinfo: {
       author_name:'招材猫',
       author_pic:'/image/index_pic.png',
@@ -16,7 +30,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    // 获取作者信息
+    this.getAuthorinfo()
   },
 
   /**
@@ -66,5 +81,34 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+
+
+   /**
+   * 方法
+   */
+
+   /**
+   * 网络请求
+   */
+  // 获取作者信息
+  getAuthorinfo(){
+    var that =this
+    http.request({
+      url: config.API_SELECTAUTHORINFO,
+      data:{
+        author_id:this.data.author_id
+      }
+    })
+    .then(res=>{
+      console.log('----------获取到作者信息了----------')
+      console.log(res)
+      this.setData({
+        author_intro: res.data.author_intro,
+        author_name: res.data.author_name,
+        author_pic: res.data.author_pic,
+      })
+      WxParse.wxParse('content', 'html', res.data.remark, that, 0)
+    })
   }
 })

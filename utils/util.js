@@ -14,6 +14,53 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+
+// 提示框，showToast
+function _showToast(title) {
+  wx.showToast({
+    icon: "none",
+    title: title,
+  })
+}
+
+
+// 成功提示框，showToast
+function _showToastSuccess(title) {
+  wx.showToast({
+    title: title,
+    duration: 2000,
+  })
+}
+
+// 成功提示框带返回，showToast
+function _showToastSuccessBack(title) {
+  wx.showToast({
+    title: title,
+    duration: 2000,
+    success: function (res) {
+      wx.navigateBack({
+        delta: 1,
+      })
+    },
+  })
+}
+
+
+//判断字符是否为空的方法
+function isEmpty(obj) {
+  if (typeof obj == "undefined" || obj == null || obj == "") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  _showToast,
+  _showToastSuccess,
+  _showToastSuccessBack,
+  isEmpty
 }

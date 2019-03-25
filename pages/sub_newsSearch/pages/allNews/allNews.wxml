@@ -6,11 +6,11 @@
     <view class='author'>
       <!-- <image class='authorBackground' src='/image/allNews_background.png'></image> -->
       <view class='authorImage'>
-        <image src='{{authorinfo.author_pic}}' mode='aspectFill'></image>
+        <image src='{{authorShowInfo.pic_url}}' mode='aspectFill'></image>
       </view>
       <view class='authorText'>
-        <text class='authorName'>{{authorinfo.author_name}}</text>
-        <text class='authorIntroduce'>{{authorinfo.author_desc}}</text>
+        <text class='authorName'>{{authorShowInfo.author_name}}</text>
+        <text class='authorIntroduce'>{{authorShowInfo.author_desc}}</text>
       </view>
     </view>
     <image class='checkMore' src='/image/allNews_more.png'></image>
@@ -31,14 +31,14 @@
           <text class='navListOrderText' wx:if='{{order==0}}' data-order='1'>倒序</text>
           <text class='navListOrderText' wx:if='{{order==1}}' data-order='0'>正序</text>
         </view>
-        <text class='navContentText'>已更新{{authorinfo.countupdate}}讲</text>
+        <text class='navContentText'>已更新{{authorShowInfo.countupdate}}讲</text>
       </view>
     </view>
     <view class='newsList'>
-      <block wx:for='{{newsinfo}}' wx:key='key'>
-        <view class='newsItem' data-article_id='{{item.article_id}}' bindtap='jumpToNews'>
+      <block wx:for='{{newsInfo}}' wx:key='key'>
+        <view class='newsItem' data-news_id='{{item.news_id}}' bindtap='jumpToNews'>
           <!-- <view class='newsTitle'> -->
-          <text class='newsTitle'>{{item.article_title}}</text>
+          <text class='newsTitle'>{{item.news_title}}</text>
           <!-- </view> -->
           <view class='newsInfo'>
             <view class='newsDesc'>

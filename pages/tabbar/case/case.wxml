@@ -6,40 +6,23 @@
 
    <!-- 轮播图 -->
   <view class='index_slideshow'>
-    <v-swiper swiperpicinfo='{{indexpicinfo}}' />
+    <v-swiper swiperpicinfo='{{bannerPicsInfo}}' />
   </view>
 
   <!-- 案例 -->
   <view>
     <!-- 案例排序方式 -->
-    <v-order />
-    <!-- <view class='caseNav'>
-      <view class='caseSortordBox'>
-        <text class='caseSortordItem'>综合</text>
-        <text class='caseSortordItem'>评价</text>
-        <view class='timeSortord'>
-          <text>时间</text>
-          <view class='caseOrderBox'>
-            <image src='/image/case_orderUp.png' style='padding-bottom:2px;'></image>
-            <image src='/image/case_orderDown.png'></image>
-          </view>
-        </view>
-      </view>
-      <view class='caseFiltrate'>
-        <text>筛选</text>
-        <image src='/image/case_filtrate.png'></image>
-      </view>
-    </view> -->
+    <v-order  bind:changeOrder='changeOrder' bind:changeAddress='changeAddress'/>
 
     <!-- 案例列表 -->
     <view class='caseList'>
-      <block wx:for='{{caseList}}'>
-        <view class='caseItem' bindtap='jumpToCase'>
-          <image class='caseItemBack' src='/image/index_pic.png' mode='aspectFits'></image>
+      <block wx:for='{{caseInfo}}'>
+        <view class='caseItem' bindtap='jumpToCase' data-id='{{item.case_id}}'>
+          <image class='caseItemBack' src='{{item.pic_url}}' mode='aspectFits'></image>
           <view class='caseItemlogo'>
-            <image src='/image/case_logo.png'></image>
+            <image src='{{item.logo_url}}'></image>
           </view>
-          <view class='caseInfo'>金胜嘉谊150平室内装修</view>
+          <view class='caseInfo'>{{item.case_name}}</view>
         </view>
       </block>
 

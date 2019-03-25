@@ -1,11 +1,13 @@
 <!--components/product/index.wxml-->
-<view class='optimalMaterialItem' bindtap='jumpToProduct'>
-  <image class='optimalMaterialImage' src='{{productItem.pic}}'></image>
-  <text class='optimalName'>{{productItem.name}}</text>
-  <text class='optimalPrice'>￥{{productItem.price}}</text>
-  <view class='intoTheShopBox'>
-    <text class='caseCompany'>{{productItem.company}}</text>
-    <text class='intoTheShop'>进店</text>
-    <image src='/image/index_littleMore.png'></image>
+<view class='optimalMaterialItem' bindtap='jumpToProduct' data-id='{{productItem.product_id}}'>
+  <image class='optimalMaterialImage' src='{{productItem.pic_url}}' mode="aspectFill"></image>
+  <view class='optimalInfoBox'>
+    <text class='optimalName'>{{productItem.product_name}}</text>
+    <text wx:if='{{platform!="ios"}}' class='optimalPrice'>￥{{productItem.product_price}}</text>
+    <view class='intoTheShopBox'>
+      <text class='caseCompany'>{{productItem.merchant_name}}</text>
+      <text class='intoTheShop'>进店</text>
+      <image src='/image/index_littleMore.png'></image>
+    </view>
   </view>
 </view>

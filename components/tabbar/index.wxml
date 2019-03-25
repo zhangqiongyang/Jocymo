@@ -1,11 +1,14 @@
 <!--components/tabbar/index.wxml-->
+<view class='placder'></view>
 <view class='tabbar'>
-  <view class='discussWrite' bindtap='toMessage'>
+  <view class='discussWrite' bindtap='toMessage' data-type='{{msg_type}}' data-id='{{msg_id}}'>
     <image src='/image/tabbar_write.png'></image>
     <text>写评论</text>
   </view>
   <view class='shareBox'>
-    <image src='/image/tabbar_like.png'></image>
-    <image src='/image/tabbar_share.png'></image>
+    <image src='/image/tabbar_like.png' bindtap='like'></image>
+    <button class='shareButton' open-type='share'>
+      <image src='/image/tabbar_share.png'></image>
+    </button>
   </view>
 </view>

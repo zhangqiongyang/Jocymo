@@ -24,6 +24,16 @@
   justify-content: center;
 }
 
+.caseSortordItem_active{
+ font-size: 30rpx;
+  color: #FF6901;
+  width: 120rpx;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .timeSortord{
   display: flex;
   flex-direction: row;
@@ -33,9 +43,9 @@
   justify-content: center;
 }
 
-.timeSortord text{
+/* .timeSortord text{
   color: #333;
-}
+} */
 
 .caseOrderBox{
   display: flex;
@@ -53,6 +63,7 @@
   display: flex;
   align-items: center;
   padding: 0 30rpx;
+  color: #FF6901;
   /* width: 220rpx; */
 }
 

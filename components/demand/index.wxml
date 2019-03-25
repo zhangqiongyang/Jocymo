@@ -1,20 +1,23 @@
 <!--components/demand/index.wxml-->
-<view class='demandItem' bindtap='jumpToDemand'>
+<view class='demandItem' bindtap='jumpToDemand' data-id='{{demandItem.demand_id}}'>
   <view class='demandImage'>
-    <image src='{{demandItem.image}}'></image>
-    <view wx:if='{{demandItem.tag==1}}' class='demandtag urgent'>加急</view>
-    <view wx:if='{{demandItem.tag==2}}' class='demandtag middle'>尽快</view>
-    <view wx:if='{{demandItem.tag==3}}' class='demandtag unhurried'>不急</view>
+    <image src='{{demandItem.pic_url}}' mode="aspectFill"></image>
+    <view wx:if='{{demandItem.demand_status==1}}' class='demandtag urgent'>加急</view>
+    <view wx:if='{{demandItem.demand_status==2}}' class='demandtag middle'>尽快</view>
+    <view wx:if='{{demandItem.demand_status==3}}' class='demandtag unhurried'>不急</view>
   </view>
   <view class='demandInfo'>
-    <text class='demandName'>{{demandItem.name}}</text>
+    <text class='demandName'>{{demandItem.demand_name}}</text>
     <view class='demandAddress'>
       地点:
-      <text>{{demandItem.address}}</text>
+      <text>{{demandItem.project_address}}</text>
     </view>
     <view class='demandPrice'>
       预算:
-      <text>{{demandItem.price}}</text>
+      <block wx:if='{{platform!="ios"}}'>
+        <text wx:if='{{demandItem.demand_budget == "面议"}}'>{{demandItem.demand_budget}}</text>
+        <text wx:else>￥{{demandItem.demand_budget[0]}}-{{demandItem.demand_budget[1]}}</text>
+      </block>
     </view>
   </view>
 </view>

@@ -1,115 +1,43 @@
 // pages/tabbar/index/index.js
+
+import {
+  HTTP
+} from '../../../utils/http-p.js'
+let http = new HTTP()
+
+import {
+  config
+} from '../../../config.js'
+
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    indexpicinfo: [
-      {
-        pic_url: '/image/index_pic.png',
-      },
-      {
-        pic_url: '/image/index_pic.png',
-      },
-      {
-        pic_url: '/image/index_pic.png',
-      },
-      {
-        pic_url: '/image/index_pic.png',
-      },
-    ], //轮播图
-    newsinfo: [{
-        article_id: 1,
-        article_title: '第一期 技术交流-装配式吕模板施工工艺功法',
-      },
-      {
-        article_id: 2,
-        article_title: '第二期 BIM的五项国家标准',
-      },
-      {
-        article_id: 3,
-        article_title: '第三期 当中国遇见BIM+FM,怎一个“爽”字了得',
-      },
-      {
-        article_id: 4,
-        article_title: '第四期 BIM技术在施工过程时的应用',
-      }
-    ], //新闻列表
-    manufacturerList: [{
-        manufacturer_pic: '/image/index_changshang_pic.png',
-        manufacturer_text: '场平功能'
-      },
-      {
-        manufacturer_pic: '/image/index_changshang_pic.png',
-        manufacturer_text: '基坑基础'
-      },
-      {
-        manufacturer_pic: '/image/index_changshang_pic.png',
-        manufacturer_text: '主体钢构'
-      },
-      {
-        manufacturer_pic: '/image/index_changshang_pic.png',
-        manufacturer_text: '维护'
-      },
-    ], //厂商汇集
-    caseList: [{
-        pic: '/image/index_rean_pic.png',
-        name: '集装式办公用房集装式办公用房集装式办公用房集装式办公用房集装式办公用房',
-        price: '2000.00',
-        company: '北京建谊智慧互联科技有限公司',
-        collect: '30',
-        like: '20',
-      },
-      {
-        pic: '/image/index_rean_pic.png',
-        name: '集装式办公用房集装式办公用房集装式办公用房集装式办公用房集装式办公用房',
-        price: '2000.00',
-        company: '北京建谊智慧互联科技有限公司',
-        collect: '30',
-        like: '20',
-      },
-      {
-        pic: '/image/index_rean_pic.png',
-        name: '集装式办公用房集装式办公用房集装式办公用房集装式办公用房集装式办公用房',
-        price: '2000.00',
-        company: '北京建谊智慧互联科技有限公司',
-        collect: '30',
-        like: '20',
-      },
-    ], //热案推荐
-    optimalMaterialList: [{
-        pic: '/image/index_youcai_pic.png',
-        name: '集装式办公用房集装式办公用房集装式办公用房集装式办公用房集装式办公用房',
-        price: '2000.00',
-        company: '北京建谊智慧互联科技有限公司',
-      },
-      {
-        pic: '/image/index_youcai_pic.png',
-        name: '集装式办公用房集装式办公用房集装式办公用房集装式办公用房集装式办公用房',
-        price: '2000.00',
-        company: '北京建谊智慧互联科技有限公司',
-      },
-      {
-        pic: '/image/index_youcai_pic.png',
-        name: '集装式办公用房集装式办公用房集装式办公用房集装式办公用房集装式办公用房',
-        price: '2000.00',
-        company: '北京建谊智慧互联科技有限公司',
-      },
-      {
-        pic: '/image/index_youcai_pic.png',
-        name: '集装式办公用房集装式办公用房集装式办公用房集装式办公用房集装式办公用房',
-        price: '2000.00',
-        company: '北京建谊智慧互联科技有限公司',
-      },
-    ]
+    indexPicInfo: [], //轮播图
+    newsinfo: [], //新闻列表
+    firstTypeInfo: [], //厂商汇集
+    caseInfo: [], //热案推荐
+    productInfo: [], //优材推荐
+    platform: app.globalData.platform, //设备信息
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    // 获取首页轮播图信息
+    this.getIndexSwiperInfo()
+    // 获取首页新闻信息接口
+    this.getIndexNewsInfo()
+    // 获取首页厂商信息
+    this.getIndexBussinessInfo()
+    // 获取首页案例信息接口
+    this.getIndexCaseInfo()
+    // 获取首页优材信息接口
+    this.getIndexProductInfo()
   },
 
   /**
@@ -186,35 +114,116 @@ Page({
     })
   },
   //跳转到新闻详情
-  jumpToNews() {
+  jumpToNews(event) {
+    console.log(event)
+    const news_id = event.currentTarget.dataset.news_id
     wx.navigateTo({
-      url: '/pages/sub_newsSearch/pages/newsDetails/newsDetails',
+      url: '/pages/sub_newsSearch/pages/newsDetails/newsDetails?id=' + news_id,
     })
   },
-  //跳转到厂商详情
-  jumpToBusiness() {
+  //跳转到相应商家列表页面
+  jumpToBusiness(event) {
+    console.log(event)
+    const id= event.currentTarget.dataset.id
     wx.navigateTo({
-      url: '/pages/sub_details/pages/businessDetails/businessDetails',
+      url: '/pages/sub_details/pages/business/business?id='+id,
     })
   },
 
 
   // 网络请求
-  getaddress(){
-   wx.request({
-     url: 'https://jt.chinabim.com/jocymo/searchaddress',
-     data: '',
-     header: {
-       'content-type': 'application/x-www-form-urlencoded'
-     },
-     method: 'POST',
-     dataType: 'json',
-     responseType: 'text',
-     success: function(res) {
-       console.log(res)
-     },
-     fail: function(res) {},
-     complete: function(res) {},
-   })
-  }
+
+  // 获取首页轮播图信息接口
+  getIndexSwiperInfo() {
+    http.request({
+        url: config.API_INDEXSWIPER,
+      })
+      .then(res => {
+        console.log('------------获取到首页轮播图信息了------------')
+        //kkkk()
+        console.log(res)
+        this.setData({
+          indexPicInfo: res.data
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  },
+
+  // 获取首页新闻信息接口
+  getIndexNewsInfo() {
+    http.request({
+        url: config.API_INDEXNEWS,
+        data: {
+          source: 'xcx',
+          show: 'index'
+        }
+      })
+      .then(res => {
+        console.log('------------获取到首页新闻信息了------------')
+        console.log(res)
+        this.setData({
+          newsinfo: res.data
+        })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  },
+
+  // 获取首页厂商信息接口
+  getIndexBussinessInfo() {
+    http.request({
+        url: config.API_INDEXFIRSTPRODUCTTYPE,
+        data: {
+          show: 'index'
+        },
+      })
+      .then(res => {
+        console.log('------------获取到首页厂商信息了------------')
+        console.log(res)
+        this.setData({
+          firstTypeInfo: res.data
+        })
+      })
+  },
+
+  // 获取首页案例信息接口
+  getIndexCaseInfo() {
+    http.request({
+        url: config.API_INDEXCASE,
+        data: {
+          source: 'xcx',
+          show: 'index',
+          login_id: wx.getStorageSync('login_id')
+        },
+      })
+      .then(res => {
+        console.log('------------获取到首页案例信息了------------')
+        console.log(res)
+        this.setData({
+          caseInfo: res.data
+        })
+      })
+  },
+
+  // 获取首页优材信息接口
+  getIndexProductInfo() {
+    http.request({
+        url: config.API_INDEXPRODUCT,
+        data: {
+          source: 'xcx',
+          show: 'index',
+          login_id: wx.getStorageSync('login_id')
+        },
+      })
+      .then(res => {
+        console.log('------------获取到首页优材信息了------------')
+        console.log(res)
+        this.setData({
+          productInfo: res.data
+        })
+      })
+  },
 })

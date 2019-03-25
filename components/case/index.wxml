@@ -1,18 +1,18 @@
 <!--components/case/index.wxml-->
-<view class='caseItem' bindtap='jumpToCase'>
-  <image class='caseItemImage' src='{{caseItem.pic}}'></image>
+<view class='caseItem' bindtap='jumpToCase' data-id='{{caseItem.case_id}}'>
+  <image class='caseItemImage' src='{{caseItem.pic_url}}' mode="aspectFill"></image>
   <view class='caseInfo'>
-    <text class='caseName'>{{caseItem.name}}</text>
-    <text class='casePrice'>￥{{caseItem.price}}</text>
-    <text class='caseCompany'>{{caseItem.company}}</text>
+    <text class='caseName'>{{caseItem.case_name}}</text>
+    <text wx:if='{{platform!="ios"}}' class='casePrice'>￥{{caseItem.case_price}}</text>
+    <text class='caseCompany'>{{caseItem.merchant_name}}</text>
     <view class='operationBox'>
       <view class='operationItem'>
         <image src='/image/index_collect.png'></image>
-        <text>{{caseItem.collect}}</text>
+        <text>{{caseItem.count_collect}}</text>
       </view>
       <view class='operationItem'>
         <image src='/image/index_like.png'></image>
-        <text>{{caseItem.like}}</text>
+        <text>{{caseItem.count_praise}}</text>
       </view>
     </view>
   </view>

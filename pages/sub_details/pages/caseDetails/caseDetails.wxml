@@ -2,16 +2,16 @@
 <view class='background'>
   <!-- 轮播图 -->
   <view class='index_slideshow'>
-    <v-swiper swiperpicinfo='{{indexpicinfo}}' />
+    <v-swiper swiperpicinfo='{{caseShowInfo.pic_url}}' />
   </view>
 
 
   <!-- 案例信息 -->
   <view class='caseInfo'>
-    <text class='caseName'>北京金宇堂饭店装修设计</text>
+    <text class='caseName'>{{caseShowInfo.case_name}}</text>
     <view class='caseAddress'>
       <image src='/image/case_address.png'></image>
-      <text>北京市丰台区</text>
+      <text>{{caseShowInfo.case_address}}</text>
     </view>
   </view>
 
@@ -20,15 +20,15 @@
     <view class='caseDescriptionTitle'>
       <text>案例描述</text>
     </view>
-    <view class='caseDescriptionCon'>建谊牌彩板，荣获国家一级发明设计奖，通过国家ISO9001质量认证体系，可符合各种常见地形使用。美观大方。 欢迎新老用户前来咨询。</view>
+    <view class='caseDescriptionCon'>{{caseShowInfo.case_desc}}</view>
   </view>
 
   <!-- 商家信息 -->
-  <v-companyInfo />
+  <v-companyInfo  companyInfo='{{merchantInfo}}' />
 
   <!-- 评论 -->
   <v-discuss  guestbookinfo='{{guestbookinfo}}' />
 
   <!-- tabbar -->
-  <v-tabbar />
+  <v-tabbar msg_type='case' msg_id='{{case_id}}'  />
 </view>

@@ -5,6 +5,7 @@ Component({
    */
   properties: {
     published:Object,
+    isProduct:Boolean,
   },
 
   /**
@@ -18,8 +19,30 @@ Component({
    */
   methods: {
     //删除
-    deleteItem(){
-      
+    deleteItem(event){
+      console.log(event)
+      let id = event.currentTarget.dataset.id
+
+      this.triggerEvent('deleteProductCase', {
+        id: id,
+      }, {})
+
+    },
+    // 跳转到修改页面
+    toChangeCase(event){
+      console.log(event)
+      let id = event.currentTarget.dataset.id
+
+      if(this.properties.isProduct){
+        wx.navigateTo({
+          url: "/pages/sub_personalCenter/pages/publishProduct/publishProduct?id=" + id,
+        })
+      }else{
+        wx.navigateTo({
+          url: "/pages/sub_personalCenter/pages/publishCase/publishCase?id=" + id,
+        })
+      }
+     
     }
   }
 })

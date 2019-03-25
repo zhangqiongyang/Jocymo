@@ -1,8 +1,17 @@
 // pages/sub_personalCenter/pages/address/address.js
 
 var app = getApp();
-// const util = require('../../../../utils/util.js')
-// const api = require('../../../../utils/api.js');
+
+import {
+  HTTP
+} from '../../../../utils/http-p.js'
+let http = new HTTP()
+
+import {
+  config
+} from '../../../../config.js'
+
+const util = require('../../../../utils/util.js');
 
 Page({
 
@@ -24,40 +33,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-
-    // 获取收货地址信息
-    wx.request({
-      // url: 'https://wx.bjjy.com/searchRecevingAddress',
-      url: api.API_GETADDRESS,
-      data: {
-        'openid': wx.getStorageSync('openid'),
-        source: 'xcx',
-        unionid: wx.getStorageSync('unionid')
-      },
-      header: {
-        'content-type': 'application/x-www-form-urlencoded'
-      },
-      method: 'POST',
-      dataType: 'json',
-      responseType: 'text',
-      success: function (res) {
-
-        if (res.data.msg == '0') {
-          console.log('------------获取到收货信息了------------')
-          console.log(res)
-          that.setData({
-            recevinginfo: res.data.recevinginfo
-          })
-        } else {
-          console.log('-----------没有收货地址---------------')
-        }
-
-      },
-      fail: function (res) {
-        console.log('------------失败了------------')
-      },
-    })
+    //查询收货信息
+    this.getAddress()
   },
 
   /**
@@ -127,12 +104,12 @@ Page({
       console.log('-------------值不为空-------------')
       this.setData({
         isNotName: false,
-        'recevinginfo.consignee': value,
+        consignee: value,
         placeholder_name: '请输入收货人姓名'
       })
     }
     console.log('------------修改的名字-------------')
-    console.log(this.data.recevinginfo.consignee)
+    console.log(this.data.consignee)
   },
   // 更改收货人手机号
   writePhoneFinish(event) {
@@ -147,7 +124,7 @@ Page({
       console.log('-------------值不为空-------------')
       this.setData({
         isNotPhone: false,
-        'recevinginfo.telephone': value,
+        telephone: value,
         placeholder_phone: '请输入手机号码'
       })
     }
@@ -165,7 +142,7 @@ Page({
       console.log('-------------值不为空-------------')
       this.setData({
         isNotAddress: false,
-        'recevinginfo.address': value,
+        address: value,
         placeholder_address: '请输入详细地址'
       })
     }
@@ -173,67 +150,78 @@ Page({
   // 提交表单
   submit() {
     var that = this;
-    if (!util.isEmpty(this.data.recevinginfo.consignee) && !util.isEmpty(this.data.recevinginfo.telephone) && !util.isEmpty(this.data.recevinginfo.address)) {
+    if (!util.isEmpty(this.data.consignee) && !util.isEmpty(this.data.telephone) && !util.isEmpty(this.data.address)) {
       console.log('----------上传收货信息-------------')
-      console.log(wx.getStorageSync('openid'))
 
-      wx.request({
-        // url: 'https://wx.bjjy.com/saveRecevingAddress',
-        url: api.API_UPLOADADDRESS,
-        data: {
-          'openid': wx.getStorageSync('openid'),
-          source: 'xcx',
-          unionid: wx.getStorageSync('unionid'),
-          'consignee': that.data.recevinginfo.consignee,
-          'telephone': that.data.recevinginfo.telephone,
-          'address': that.data.recevinginfo.address
-        },
-        header: {
-          'content-type': 'application/x-www-form-urlencoded'
-        },
-        method: 'POST',
-        dataType: 'json',
-        responseType: 'text',
-        success: function (res) {
-          console.log('-----------收货信息上传成功了-------------')
-        },
-        fail: function (res) {
-          console.log('-----------收货信息上传失败了-------------')
-        },
-      })
-      wx.showToast({
-        title: '保存成功',
-        success: function (res) { },
-      })
 
-      console.log('------------ 获取全局变量----------------')
-      console.log(app.globalData.recevinginfo)
+      //保存收货信息
+      this.saveAddress()
 
-      app.globalData.recevinginfo.consignee = that.data.recevinginfo.consignee
-      app.globalData.recevinginfo.telephone = that.data.recevinginfo.telephone
-      app.globalData.recevinginfo.address = that.data.recevinginfo.address
-
-      console.log('------------ 获取全局变量----------------')
-      console.log(app.globalData.recevinginfo)
-
-      wx.navigateBack({
-        delta: 1,
-      })
-
-    } else if (util.isEmpty(this.data.recevinginfo.consignee)) {
+     
+    } else if (util.isEmpty(this.data.consignee)) {
       this.setData({
         isNotName: true
       })
-    } else if (util.isEmpty(this.data.recevinginfo.telephone)) {
+    } else if (util.isEmpty(this.data.telephone)) {
       this.setData({
         isNotPhone: true
       })
-    } else if (util.isEmpty(this.data.recevinginfo.address)) {
+    } else if (util.isEmpty(this.data.address)) {
       this.setData({
         isNotAddress: true
       })
     }
   },
 
+  /**
+   * 网络请求
+   */
+
+  //查询收货信息
+  getAddress(){
+    http.request({
+      url: config.API_SELECTADDRESS,
+      data:{
+        source:'xcx',
+        login_id:wx.getStorageSync('login_id')
+      }
+    })
+    .then(res=>{
+      console.log('--------查询到收货信息了---------')
+      console.log(res)
+      this.setData({
+        consignee: res.data.consignee,
+        address: res.data.receving_address,
+        telephone: res.data.telephone
+      })
+    })
+  },
+
+  //保存收货信息
+  saveAddress(){
+    http.request({
+      url: config.API_SAVEADDRESS,
+      data: {
+        source: 'xcx',
+        login_id: wx.getStorageSync('login_id'),
+        consignee: this.data.consignee,
+        telephone: this.data.telephone,
+        receving_address: this.data.address
+      }
+    })
+      .then(res => {
+        console.log('--------保存收货信息---------')
+        console.log(res)
+        wx.showToast({
+          title: '保存成功',
+          success: function (res) { },
+        })
+
+        wx.navigateBack({
+          delta: 1,
+        })
+
+      })
+  }
 
 })

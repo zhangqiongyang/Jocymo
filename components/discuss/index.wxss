@@ -2,6 +2,8 @@
 .discuss{
   background-color: #ffffff;
   margin-top: 20rpx;
+  margin-bottom: 98rpx;
+  padding-bottom: 1rpx;
 }
 
 .discussTitle {

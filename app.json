@@ -2,13 +2,11 @@
   "pages": [
     "pages/tabbar/index/index",
     "pages/sub_details/pages/business/business",
-    "pages/sub_personalCenter/pages/publishDemand/publishDemand",
     "pages/sub_personalCenter/pages/published/published",
     "pages/sub_details/pages/productDetails/productDetails",
     "pages/sub_details/pages/businessDetails/businessDetails",
     "pages/sub_details/pages/demandDetails/demandDetails",
     "pages/sub_details/pages/caseDetails/caseDetails",
-    "pages/logs/logs",
     "pages/tabbar/case/case",
     "pages/tabbar/selectMaterial/selectMaterial",
     "pages/tabbar/demand/demand",
@@ -20,7 +18,12 @@
     "pages/sub_newsSearch/pages/allNews/allNews",
     "pages/sub_newsSearch/pages/authorDetails/authorDetails",
     "pages/sub_newsSearch/pages/newsDetails/newsDetails",
-    "pages/sub_newsSearch/pages/search/search"
+    "pages/sub_newsSearch/pages/search/search",
+    "pages/sub_personalCenter/pages/publishDemand/publishDemand",
+    "pages/sub_personalCenter/pages/publishBussiness/publishBussiness",
+    "pages/sub_personalCenter/pages/publishCase/publishCase",
+    "pages/sub_personalCenter/pages/publishProduct/publishProduct",
+    "pages/phone/phone"
   ],
   "window": {
     "backgroundTextStyle": "light",

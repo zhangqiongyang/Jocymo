@@ -2,11 +2,11 @@
 <view class='background'>
      <!-- 轮播图 -->
   <view class='index_slideshow'>
-    <v-swiper swiperpicinfo='{{indexpicinfo}}' />
+    <v-swiper swiperpicinfo='{{product_pic}}' />
   </view>
 
   <!-- 产品标题 -->
-  <view class='productTitle'>防水钢结构彩板</view>
+  <view class='productTitle'>{{product_name}}</view>
 
   <!-- 产品描述 -->
   <view class='productDescription'>
@@ -15,31 +15,30 @@
       <view class='{{productItem == 2?"titleItemHover":"titleItem"}}' bindtap='changeProductItem' data-productitem='2'>产品参数</view>
     </view>
     <view class='descriptionCon'>
-      <view class='productDescriptionCon' wx:if='{{productItem == 1}}'>建谊牌彩板，荣获国家一级发明设计奖，通过国家ISO9001质量认证体系，可符合各种常见地形使用。美观大方。
-欢迎新老用户前来咨询。</view>
+      <view class='productDescriptionCon' wx:if='{{productItem == 1}}'>{{product_desc}}</view>
       <view class='productParameterCon' wx:if='{{productItem == 2}}'>
         <view class='parameterItem'>
           <text class='parameterTitle'>规格尺寸</text>
-          <text class='parameterCon'>300 * 300 * 10</text>
+          <text class='parameterCon'>{{product_type}}</text>
         </view>
         <view class='parameterItem'>
           <text class='parameterTitle'>价格区间</text>
-          <text class='parameterCon'>100~500元</text>
+          <text class='parameterCon'>{{product_price}}元</text>
         </view>
         <view class='parameterItem'>
           <text class='parameterTitle'>其他说明</text>
-          <text class='parameterCon'>彩板吸水性强，可适合多种地板装修彩板吸水性强，可适合多 种地板装修彩板吸水性强，可适合多种地板装修.</text>
+          <text class='parameterCon'>{{product_other}}</text>
         </view>
       </view>
     </view>
   </view>
 
   <!-- 商家信息 -->
-  <v-companyInfo />
+  <v-companyInfo   companyInfo='{{merchantInfo}}'/>
 
   <!-- 评论 -->
   <v-discuss  guestbookinfo='{{guestbookinfo}}' />
 
   <!-- tabbar -->
-  <v-tabbar />
+  <v-tabbar msg_type='product' msg_id='{{product_id}}'  />
 </view>

@@ -23,12 +23,12 @@
 
   <!-- 文章标题 -->
   <view class='articleTitle'>
-    <text class='article_title'>{{articleinfo.article_title}}</text>
+    <text class='article_title'>{{newsShowInfo.news_title}}</text>
     <view class='article_articleInfo'>
-      <image class='article_authorImg' src='{{authorinfo.author_pic}}' mode='aspectFill'></image>
+      <image class='article_authorImg' src='{{authorShowInfo.author_pic}}' mode='aspectFill'></image>
       <view class='article_authorInfo'>
-        <text class='article_author'>{{authorinfo.author_name}}</text>
-        <text class='article_time'>{{authorinfo.company}}</text>
+        <text class='article_author'>{{authorShowInfo.author_name}}</text>
+        <text class='article_time'>{{authorShowInfo.merchant_name}}</text>
       </view>
     </view>
   </view>
@@ -47,12 +47,12 @@
         <image class='playStop' src='/image/article_play.png'></image>
       </view>
       <view class='playerInfo'>
-        <text class='player_article_title'>{{articleinfo.article_title}}</text>
+        <text class='player_article_title'>{{newsShowInfo.news_title}}</text>
         <view class='player_article_audioInfo'>
-          <text class='player_article_declaimer'>朗读人：{{articleinfo.audio_read}}</text>
+          <text class='player_article_declaimer'>朗读人：{{newsShowInfo.audio_read}}</text>
           <text class='player_article_time'>{{minute}}'{{second}}''</text>
           <image src='/image/acticle_line.png'></image>
-          <text class='player_article_size'>{{articleinfo.audio_size}}M</text>
+          <text class='player_article_size'>{{newsShowInfo.audio_size}}M</text>
         </view>
       </view>
       <!-- <view class='playerDown'>
@@ -65,12 +65,12 @@
         <image class='playStop' src='/image/article_stop.png'></image>
       </view>
       <view class='playerInfo'>
-        <text class='player_article_title'>{{articleinfo.article_title}}</text>
+        <text class='player_article_title'>{{newsShowInfo.article_title}}</text>
         <view class='player_article_audioInfo'>
-          <text class='player_article_declaimer'>朗读人：{{articleinfo.audio_read}}</text>
+          <text class='player_article_declaimer'>朗读人：{{newsShowInfo.audio_read}}</text>
           <text class='player_article_time'>{{minute}}'{{second}}''</text>
           <image src='/image/acticle_line.png'></image>
-          <text class='player_article_size'>{{articleinfo.audio_size}}M</text>
+          <text class='player_article_size'>{{newsShowInfo.audio_size}}M</text>
         </view>
       </view>
       <!-- <view class='playerDown'>
@@ -104,7 +104,7 @@
 
 
   <!-- tabbar -->
-  <v-tabbar />
+  <v-tabbar  msg_type='news' msg_id='{{news_id}}' />
 
 
 

@@ -1,14 +1,26 @@
 // pages/sub_newsSearch/pages/search/search.js
+
+
+import {
+  HTTP
+} from '../../../../utils/http-p.js'
+let http = new HTTP()
+
+import {
+  config
+} from '../../../../config.js'
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    searchTitleItem: 0, //搜索项， 0代表产品， 1代表案例 ，3代表需求，
-    historyList: [
-      '基坑基础', '主题钢构', '集装箱式办公用房', '集装箱式办公用房', '主题钢构',
-    ],
+    isHistory:true, //展示历史纪录
+    searchTitleItem: 2, //搜索项， 2代表产品，3代表案例 ，4代表需求，
+    historyList: [],
+    region:'',
     caseList: [{
         pic: '/image/index_rean_pic.png',
         name: '集装式办公用房集装式办公用房集装式办公用房集装式办公用房集装式办公用房',
@@ -98,7 +110,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    // 查询历史纪录
+    this.getHistory()
   },
 
   /**
@@ -162,5 +175,118 @@ Page({
       searchTitleItem: searchTitleItem
     })
     console.log(this.data.searchTitleItem)
+
+    //搜索接口
+    this.searchRequest()
   },
+
+  // 删除历史记录
+  deleteHistory() {
+    let historyList = this.data.historyList
+    this.setData({
+      historyList: []
+    })
+    // 删除历史纪录
+    this.deleteHistory()
+  },
+
+  //搜索
+  search(event) {
+    console.log(event)
+    let value = event.detail.value
+
+    this.setData({
+      key: value
+    })
+
+    //搜索接口
+    this.searchRequest(value)
+  },
+
+  // 历史纪录关键词搜索
+  searchHistory(event){
+    console.log(event)
+    let key = event.currentTarget.dataset.key
+
+    this.setData({
+      key:key
+    })
+
+    //搜索接口
+    this.searchRequest(key)
+  },
+
+
+  /**
+   * 网络请求
+   */
+
+  //搜索接口
+  searchRequest(key) {
+    http.request({
+        url: config.API_SEAECH,
+        data: {
+          search_keyword: key ? key : this.data.key,
+          address: this.data.region,
+          type_id: this.data.searchTitleItem, //2 产品 3案例 4需求
+          source: 'xcx',
+          login_id: wx.getStorageSync('login_id')
+        }
+      })
+      .then(res => {
+        console.log('------------获取到搜索结果了-----------')
+        console.log(res)
+        this.setData({
+          isHistory:false
+        })
+        if (this.data.searchTitleItem == 2){
+          this.setData({
+            productList: res.data
+          })
+        } else if (this.data.searchTitleItem == 3){
+          this.setData({
+            caseList: res.data
+          })
+        } else if (this.data.searchTitleItem == 4){
+          this.setData({
+            demandList: res.data
+          })
+        }
+        
+      })
+  },
+
+  // 查询历史纪录
+  getHistory() {
+    http.request({
+        url: config.API_SELECTHISTORY,
+        data: {
+          source: 'xcx',
+          login_id: wx.getStorageSync('login_id')
+        }
+      })
+      .then(res => {
+        console.log('---------获取到历史纪录了--------')
+        console.log(res)
+        this.setData({
+          historyList: res.data
+        })
+      })
+  },
+
+  // 删除历史纪录
+  deleteHistory() {
+    http.request({
+        url: config.API_DELETEHISTORY,
+        data: {
+          source: 'xcx',
+          login_id: wx.getStorageSync('login_id')
+        }
+      })
+      .then(res => {
+        console.log('---------删除历史纪录了--------')
+        console.log(res)
+      })
+  },
+
 })

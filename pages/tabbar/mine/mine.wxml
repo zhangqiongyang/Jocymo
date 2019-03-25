@@ -4,17 +4,25 @@
   <view class='mine_background'></view>
 
   <!-- 用户信息 -->
-  <view class='mine_userInfo'>
-    <view class='mine_userInfoBox'>
-      <image class='userImage' src='/image/index_pic.png'></image>
-      <view class='userInfo'>
-        <text class='userName'>吟花入酒</text>
-        <!-- <text class='userPhoneNum'>尚未绑定手机号</text> -->
-        <text class='userPhoneNum'>17778213115</text>
+
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">点击登录</button>
+    <block wx:else>
+      <view class='mine_userInfo'>
+        <view class='mine_userInfoBox'>
+          <image class='userImage' src='{{userInfo.avatarUrl}}' mode="cover"></image>
+          <view class='userInfo'>
+            <text class='userName'>{{userInfo.nickName}}</text>
+            <text wx:if='{{isHavePhone}}' class='userPhoneNum'>{{phone}}</text>
+            <text wx:else bindtap='toPhone' class='userPhoneNum'>尚未绑定手机号</text>
+            
+          </view>
+        </view>
+        <image class='userCode' src='/image/mine_code.png'></image>
       </view>
-    </view>
-    <image class='userCode' src='/image/mine_code.png'></image>
+    </block>
   </view>
+
 
   <!-- 导航栏 -->
   <view class='mine_nav'>
@@ -54,7 +62,7 @@
       </view>
       <image class='mine_more' src='/image/mine_more.png'></image>
     </view>
-    <view class='addressBox'>
+    <view class='addressBox' bindtap='toPublishBussiness'>
       <view class='addressNav'>
         <image src='/image/mine_authentication.png'></image>
         <text>商家认证</text>
@@ -71,20 +79,6 @@
       <view class='publishTitle'>发布</view>
       <view class='publishCon'>
         <view class='publishBox'>
-          <view class='publishItem' data-publishEntry='1' bindtap='selectPublishEntry'>
-            <view class='{{publishEntry==1?"publishImageHover":"publishImage"}}'>
-              <image wx:if='{{publishEntry==1}}' src='/image/publishProductHover.png'></image>
-              <image wx:else src='/image/publishProduct.png'></image>
-            </view>
-            <text class='{{publishEntry==1?"publishItemTextHover":"publishItemText"}}'>发布产品</text>
-          </view>
-          <view class='publishItem' data-publishEntry='2' bindtap='selectPublishEntry'>
-            <view class='{{publishEntry==2?"publishImageHover":"publishImage"}}'>
-              <image wx:if='{{publishEntry==2}}' src='/image/publishCaseHover.png'></image>
-              <image wx:else src='/image/publishCase.png'></image>
-            </view>
-            <text class='{{publishEntry==2?"publishItemTextHover":"publishItemText"}}'>发布案例</text>
-          </view>
           <view class='publishItem' data-publishEntry='3' bindtap='selectPublishEntry'>
             <view class='{{publishEntry==3?"publishImageHover":"publishImage"}}'>
               <image wx:if='{{publishEntry==3}}' src='/image/publishDemandHover.png'></image>
@@ -92,6 +86,39 @@
             </view>
             <text class='{{publishEntry==3?"publishItemTextHover":"publishItemText"}}'>发布需求</text>
           </view>
+          <block wx:if='{{isBussiness}}'>
+            <view class='publishItem' data-publishEntry='2' bindtap='selectPublishEntry'>
+              <view class='{{publishEntry==2?"publishImageHover":"publishImage"}}'>
+                <image wx:if='{{publishEntry==2}}' src='/image/publishCaseHover.png'></image>
+                <image wx:else src='/image/publishCase.png'></image>
+              </view>
+              <text class='{{publishEntry==2?"publishItemTextHover":"publishItemText"}}'>发布案例</text>
+            </view>
+
+            <view class='publishItem' data-publishEntry='1' bindtap='selectPublishEntry'>
+              <view class='{{publishEntry==1?"publishImageHover":"publishImage"}}'>
+                <image wx:if='{{publishEntry==1}}' src='/image/publishProductHover.png'></image>
+                <image wx:else src='/image/publishProduct.png'></image>
+              </view>
+              <text class='{{publishEntry==1?"publishItemTextHover":"publishItemText"}}'>发布产品</text>
+            </view>
+          </block>
+          <block wx:else>
+            <view class='publishItem' data-publishEntry='2'>
+              <view class='publishImage_not'>
+                <image src='/image/publishCase_not.png'></image>
+              </view>
+              <text class='publishItemText'>发布案例</text>
+            </view>
+            <view class='publishItem' data-publishEntry='1'>
+              <view class='publishImage_not'>
+                <image src='/image/publishProduct.png'></image>
+              </view>
+              <text class='publishItemText'>发布产品</text>
+            </view>
+            
+          </block>
+
         </view>
       </view>
       <view class='mine_btnBox'>

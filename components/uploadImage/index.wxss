@@ -21,8 +21,9 @@
   width: 34rpx;
   height: 34rpx;
   position: absolute;
-  right: -5%;
-  top: -7%;
+  right: -10%;
+  top: -9%;
+  padding: 10rpx;
 }
 
 .uploadImage {

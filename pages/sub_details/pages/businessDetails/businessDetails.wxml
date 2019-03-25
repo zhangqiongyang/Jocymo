@@ -3,17 +3,17 @@
 
   <!-- 轮播图 -->
   <view class='index_slideshow'>
-    <v-swiper swiperpicinfo='{{indexpicinfo}}' />
+    <v-swiper swiperpicinfo='{{merchant_pic_url}}' />
   </view>
 
   <!-- 商家简介 -->
   <view class='businessDesc'>
-    <image class='businessLogo' src='/image/index_pic.png'></image>
+    <image class='businessLogo' src='{{logo_url}}'></image>
     <view class='caseInfo'>
-      <text class='caseName'>北京金宇堂饭店装修设计</text>
+      <text class='caseName'>{{merchant_name}}</text>
       <view class='caseAddress'>
         <image src='/image/case_address.png'></image>
-        <text>北京市丰台区</text>
+        <text>{{merchant_address}}</text>
       </view>
     </view>
   </view>
@@ -27,7 +27,7 @@
         <text class='{{infoItem == 1?"titleTextHover":"titleText"}}'>简介</text>
       </view>
       <view class='titleItem' bindtap='changeInfoItem' data-infoitem='2'>
-        <text class='{{infoItem == 2?"titleNumHover":"titleNum"}}'>3</text>
+        <text class='{{infoItem == 2?"titleNumHover":"titleNum"}}'>{{countaptiude}}</text>
         <text class='{{infoItem == 2?"titleTextHover":"titleText"}}'>资质</text>
       </view>
       <view class='titleItem' bindtap='changeInfoItem' data-infoitem='3'>
@@ -36,7 +36,7 @@
         <text class='{{infoItem == 3?"titleTextHover":"titleText"}}'>产品</text>
       </view>
       <view class='titleItem' bindtap='changeInfoItem' data-infoitem='4'>
-        <text class='{{infoItem == 4?"titleNumHover":"titleNum"}}'>5</text>
+        <text class='{{infoItem == 4?"titleNumHover":"titleNum"}}'>{{countcase}}</text>
         <text class='{{infoItem == 4?"titleTextHover":"titleText"}}'>案例</text>
       </view>
       <view class='titleItem' bindtap='changeInfoItem' data-infoitem='5'>
@@ -47,43 +47,50 @@
     </view>
     <view class='businessInfoCon'>
       <view class='businessIntroCon' wx:if='{{infoItem == 1}}'>
-        成立于2001年，是一家集研发、生产、建造于一体的大型企业。公司“建谊”牌产品被评为北京本地十大名牌之一，并通过IOS9001质量验证。公司秉承“简约、快捷、优质、价廉”的产品理念，秉承“让世界的人们都住的上好房子”的企业愿景，跟随一带一路，将事业发展到海外。 欢迎各位专家咨询。
+        {{merchant_introduce}}
       </view>
       <view class='businessQualificationCon' wx:if='{{infoItem == 2}}'>
         <scroll-view scroll-x style='white-space: nowrap;'>
-          <block wx:for='{{businessInfo.qualification}}' wx:key='key'>
-            <view class='qualificationConItem' bindtap='previewImage'>
+          <block wx:for='{{merchant_aptiude_pic}}' wx:key='key'>
+            <view class='qualificationConItem' bindtap='previewImage' data-index='{{index}}'>
               <image src='{{item}}' mode='aspectFit'></image>
             </view>
           </block>
         </scroll-view>
       </view>
-      <view class='businessProductCon' wx:if='{{infoItem == 3}}'>
-        <block>
+      <view wx:if='{{infoItem == 3}}'>
+        <view class='businessProductCon'>
           <view class='productList'>
             <block wx:for='{{optimalMaterialList}}' wx:key='key'>
               <v-product productItem='{{item}}' class='productItem' />
             </block>
           </view>
-        </block>
-        <view class='more'>加载更多</view>
+        </view>
+        <view wx:if='{{isHaveMoreProduct}}' class='more' bindtap='more' data-type='product'>加载更多</view>
+        <!-- 没有更多了 -->
+        <v-noMore wx:else/>
       </view>
-      <view class='businessCaseCon' wx:if='{{infoItem == 4}}'>
-        <block wx:for='{{caseList}}' wx:key='key'>
-          <v-case caseItem='{{item}}' />
-        </block>
-        <block wx:for='{{caseList}}' wx:key='key'>
-          <v-case caseItem='{{item}}' />
-        </block>
-        <view class='more'>加载更多</view>
+      <view wx:if='{{infoItem == 4}}'>
+        <view class='businessCaseCon'>
+          <block wx:for='{{caseList}}' wx:key='key'>
+            <v-case caseItem='{{item}}' />
+          </block>
+        </view>
+        <view wx:if='{{isHaveMoreCase}}' class='more' bindtap='more' data-type='case'>加载更多</view>
+        <!-- 没有更多了 -->
+        <v-noMore wx:else/>
       </view>
-      <view class='businessCaseCon' wx:if='{{infoItem == 5}}'>
-        <block wx:for='{{demandList}}' wx:key='key'>
-          <view class='caseItem'>
-            <v-demand demandItem='{{item}}' />
-          </view>
-        </block>
-        <view class='more'>加载更多</view>
+      <view wx:if='{{infoItem == 5}}'>
+        <view class='businessCaseCon'>
+          <block wx:for='{{demandList}}' wx:key='key'>
+            <view class='caseItem'>
+              <v-demand demandItem='{{item}}' />
+            </view>
+          </block>
+        </view>
+        <view wx:if='{{isHaveMoreDemand}}' class='more' bindtap='more' data-type='demand'>加载更多</view>
+        <!-- 没有更多了 -->
+        <v-noMore wx:else/>
       </view>
     </view>
   </view>
@@ -92,7 +99,7 @@
   <v-discuss guestbookinfo='{{guestbookinfo}}' />
 
   <!-- tabbar -->
-  <v-tabbar />
+  <v-tabbar msg_type='bussiness' msg_id='{{merchant_id}}' />
 
 
 </view>

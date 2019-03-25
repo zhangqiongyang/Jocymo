@@ -7,9 +7,9 @@
       <image class='index_service_img' src='/image/index_service.png' />
       <text>客服</text>
     </view>
-    <view class='index_search_input' bindtap='jumpToSearch'>
+    <view class='index_search_input' >
       <image src='/image/index_search.png'></image>
-      <input class='index_search_input'></input>
+      <input class='index_search_input' value='{{key}}' bindconfirm='search'></input>
     </view>
     <view class='index_service'>
       <image class='index_service_img' src='/image/index_history.png' />
@@ -19,42 +19,45 @@
 
   <!-- 搜索类型 -->
   <view class='searchClassify'>
-    <view bindtap='changeSearchTitle' data-searchtitle='0' class='{{searchTitleItem == 0?"classifyHover":"classify"}}'>产品</view>
-    <view bindtap='changeSearchTitle' data-searchtitle='1' class='{{searchTitleItem == 1?"classifyHover":"classify"}}'>案例</view>
-    <view bindtap='changeSearchTitle' data-searchtitle='2' class='{{searchTitleItem == 2?"classifyHover":"classify"}}'>需求</view>
+    <view bindtap='changeSearchTitle' data-searchtitle='2' class='{{searchTitleItem == 2?"classifyHover":"classify"}}'>产品</view>
+    <view bindtap='changeSearchTitle' data-searchtitle='3' class='{{searchTitleItem == 3?"classifyHover":"classify"}}'>案例</view>
+    <view bindtap='changeSearchTitle' data-searchtitle='4' class='{{searchTitleItem == 4?"classifyHover":"classify"}}'>需求</view>
   </view>
 
   <!-- 历史纪录 -->
-  <view class='history'>
+  <view wx:if='{{isHistory}}' class='history'>
     <view class='historyTitleBox'>
       <text>历史搜索</text>
-      <image src='/image/history_delete.png'></image>
+      <image src='/image/history_delete.png' bindtap='deleteHistory'></image>
     </view>
     <view class='historyList'>
       <block wx:for='{{historyList}}' wx:key='key'>
-        <view class='historyItem'>{{item}}</view>
+        <view class='historyItem' bindtap='searchHistory' data-key='{{item.search_keyword}}'>{{item.search_keyword}}</view>
+        
       </block>
     </view>
   </view>
 
   <!-- 搜索结果 -->
-  <view>
+  <view wx:else>
     <!-- 产品 -->
-    <view wx:if='{{searchTitleItem == 0}}' class='productList'>
+    <view wx:if='{{searchTitleItem == 2}}' class='productList'>
       <block wx:for='{{productList}}' wx:key='key'>
-        <v-product productItem='{{item}}' />
+        <view class='productItem'>
+          <v-product productItem='{{item}}' />
+        </view>
       </block>
     </view>
 
     <!-- 案例 -->
-    <view wx:if='{{searchTitleItem == 1}}' class='productList'>
+    <view wx:if='{{searchTitleItem == 3}}' class='productList'>
       <block wx:for='{{caseList}}' wx:key='key'>
         <v-case caseItem='{{item}}' />
       </block>
     </view>
 
     <!-- 需求 -->
-    <view wx:if='{{searchTitleItem == 2}}' class='productList'>
+    <view wx:if='{{searchTitleItem == 4}}' class='productList'>
       <block wx:for='{{demandList}}' wx:key='key'>
         <v-demand demandItem='{{item}}' />
       </block>

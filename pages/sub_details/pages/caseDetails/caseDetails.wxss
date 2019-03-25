@@ -1,10 +1,12 @@
 /* pages/sub_details/pages/caseDetails/caseDetails.wxss */
-.background{
+
+.background {
   margin-bottom: 98rpx;
 }
 
 /* 轮播图 */
-.index_slideshow{
+
+.index_slideshow {
   height: 375rpx;
 }
 
@@ -14,6 +16,7 @@
   width: 100%;
   padding: 30rpx;
   background-color: #fff;
+  box-sizing: border-box;
 }
 
 .caseAddress {
@@ -63,7 +66,5 @@
 }
 
 /* 商家详情 */
-
-
 
 /* 评论 */

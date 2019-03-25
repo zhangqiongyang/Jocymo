@@ -2,11 +2,11 @@
 <view class='background'>
     <!-- 轮播图 -->
   <view class='index_slideshow'>
-    <v-swiper swiperpicinfo='{{indexpicinfo}}' />
+    <v-swiper swiperpicinfo='{{demand_picsInfo}}' />
   </view>
 
   <!-- 案例信息 -->
-  <view class='demandName'>仿江南水乡园林设计</view>
+  <view class='demandName'>{{demandShowInfo.demand_name}}</view>
 
   <!-- 需求描述 -->
   <view class='demandDescription'>
@@ -14,26 +14,30 @@
       <text>需求描述</text>
     </view>
     <view class='demandDescriptionList'>
-      <text class='descriptionCon'>建谊牌彩板，荣获国家一级发明设计奖，通过国家ISO9001质量认证体系，可符合各种常见地形使用。美观大方。欢迎新老用户前来咨询。</text>
+      <text class='descriptionCon'>{{demandShowInfo.demand_desc}}</text>
       <view class='demandDescriptionItem'>
         <text class='descriptionItem'>需求数量</text>
-        <text class='descriptionDetails'>300</text>
+        <text class='descriptionDetails'>{{demandShowInfo.demand_number}}</text>
       </view>
       <view class='demandDescriptionItem'>
         <text class='descriptionItem'>需求预算</text>
-        <text class='descriptionDetails'>100-500元</text>
+        <block  wx:if='{{platform!="ios"}}'>
+         <text wx:if='{{demandShowInfo.demand_budget =="面议"}}' class='descriptionDetails'>{{demandShowInfo.demand_budget}}</text>
+        <text wx:else class='descriptionDetails'>￥{{demandShowInfo.demand_budget[0]}}-{{demandShowInfo.demand_budget[1]}}</text>
+        </block>
       </view>
       <view class='demandDescriptionItem'>
         <text class='descriptionItem'>项目地址</text>
-        <text class='descriptionDetails'>山东省-济南市-槐荫区</text>
+        <text class='descriptionDetails'>{{demandShowInfo.project_address}}</text>
       </view>
       <view class='demandDescriptionItem'>
         <text class='descriptionItem'>其他描述</text>
-        <text class='descriptionDetails'>彩板吸水性强，可适合多种地板装修彩板吸水性强，可适合多 种地板装修彩板吸水性强，可适合多种地板装修.</text>
+        <text class='descriptionDetails'>{{demandShowInfo.demand_other}}</text>
       </view>
       <view class='demandDescriptionItem getPhone'>
         <text class='descriptionItem'>电话联系</text>
-        <view class='btn_buy' bindtap='toBuy'>点此获取</view>
+        <text wx:if='{{is_buy}}'>{{phone}}</text>
+        <view wx:else class='btn_buy' bindtap='toBuy'>点此获取</view> 
       </view>
     </view>
   </view>
@@ -42,21 +46,22 @@
   <v-discuss  guestbookinfo='{{guestbookinfo}}' />
 
   <!-- tabbar -->
-  <v-tabbar />
+  <v-tabbar  msg_type='demand' msg_id='{{demand_id}}' />
 
   <!-- 购买弹窗 -->
   <view class='buyBack' wx:if='{{isBuy}}'>
     <view class='buyTier'>
       <text class='buyTitle'>支付9.9获取需求方手机号</text>
       <view class='buy'>
-        <view wx:if='{{isSelected}}' bindtap='selectStatement' class='buy_checkBox'></view>
+        <view wx:if='{{!isSelected}}' bindtap='selectStatement' class='buy_checkBox'></view>
         <image wx:else bindtap='selectStatement' src='/image/buy_hover.png'></image>
-        <text class='buyText'>招财猫需求购买</text>
+        <text bindtap='selectStatement' class='buyText'>招财猫需求购买</text>
         <text bindtap='toDisclaimer' class='buyText color'>《免责声明》</text>
       </view>
       <view class='mine_btnBox'>
         <view class='mine_btn cancel' bindtap='cancelBuy'>取消</view>
-        <view class='mine_btn submit' bindtap='buy'>发布</view>
+        <button wx:if='{{isSelected}}' class='mine_btn submit' bindtap='buy'>获取</button>
+        <button disabled='true' wx:else class='mine_btn submit'>获取</button>
       </view>
     </view>
   </view>

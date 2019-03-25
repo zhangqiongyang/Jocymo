@@ -4,8 +4,13 @@
   display: inline-block;
   /* padding-right: 20rpx; */
   width: 330rpx;
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 8rpx;
+}
+
+.optimalInfoBox {
+  padding: 0 10rpx;
+  box-sizing: border-box;
 }
 
 .optimalMaterialImage {
@@ -21,7 +26,7 @@
 
 .intoTheShop {
   font-size: 18rpx;
-  padding-left: 16rpx;
+  padding-left: 12rpx;
   padding-right: 4rpx;
 }
 
@@ -30,10 +35,10 @@
   height: 10rpx;
 }
 
-
 .optimalName {
+  height: 72rpx;
   font-size: 26rpx;
-  word-wrap:break-word;
+  word-wrap: break-word;
   white-space: normal;
   text-overflow: ellipsis;
   line-height: 40rpx;
@@ -43,7 +48,7 @@
   overflow: hidden;
 }
 
-.optimalPrice{
+.optimalPrice {
   color: #ff6901;
   padding-top: 30rpx;
   display: block;

@@ -1,29 +1,32 @@
 /* pages/sub_details/pages/productDetails/productDetails.wxss */
-.background{
+
+.background {
   margin-bottom: 98rpx;
 }
 
-
 /* 轮播图 */
-.index_slideshow{
+
+.index_slideshow {
   height: 375rpx;
 }
 
-
 /* 产品标题 */
-.productTitle{
+
+.productTitle {
   width: 100%;
   padding: 30rpx;
   background-color: #fff;
+  box-sizing: border-box;
 }
 
 /* 产品描述 */
-.productDescription{
+
+.productDescription {
   background-color: #fff;
   margin-top: 20rpx;
 }
 
-.productDescriptionTitle{
+.productDescriptionTitle {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -32,50 +35,50 @@
   padding: 0 30rpx;
 }
 
-.titleItem{
+.titleItem {
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1;
-  border-bottom: 4px solid #DDDDDD;
+  border-bottom: 4px solid #ddd;
   height: 100%;
   box-sizing: border-box;
 }
 
-.titleItemHover{
+.titleItemHover {
   display: flex;
   align-items: center;
   justify-content: center;
   flex: 1;
-  border-bottom: 4px solid #FF6901;
+  border-bottom: 4px solid #ff6901;
   height: 100%;
   box-sizing: border-box;
-  color: #FF6901;
+  color: #ff6901;
 }
 
-.descriptionCon{
+.descriptionCon {
   padding: 30rpx;
 }
 
-.productDescriptionCon{
+.productDescriptionCon {
   padding-bottom: 110rpx;
 }
 
-.productParameterCon{
+.productParameterCon {
   padding-bottom: 10rpx;
 }
 
-.parameterItem{
+.parameterItem {
   display: flex;
 }
 
-.parameterTitle{
+.parameterTitle {
   font-size: 26rpx;
-  color: #999999;
+  color: #999;
   width: 132rpx;
 }
 
-.parameterCon{
+.parameterCon {
   font-size: 26rpx;
   line-height: 46rpx;
   width: 562rpx;

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "v-uploadImage": "/components/uploadImage/index"
+  }
+}

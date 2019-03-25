@@ -1,0 +1,57 @@
+<!--pages/sub_personalCenter/pages/publishCase/publishCase.wxml-->
+<!--pages/sub_personalCenter/pages/publishProduct/publishProduct.wxml-->
+<view class='background'>
+  <view class='formItem'>
+    <text class='form_label'>案例名称</text>
+    <input class='form_input' value='{{case_name}}' bindconfirm='checkName' bindinput='writeFinish' data-id='name'></input>
+  </view>
+  <view class='formItem'>
+    <text class='form_label'>案例地点</text>
+    <picker mode='region' bindchange="bindRegionChange"  value="{{region}}">
+      <view class='pickerView'>
+        <text wx:if='{{isRegion}}'>{{region[0]}}，{{region[1]}}，{{region[2]}}</text>
+        <text wx:else>请选择</text>
+        <image src='/image/publishDemand_select.png'></image>
+      </view>
+    </picker>
+  </view>
+  <!-- <view class='formItem'>
+    <text class='form_label'>规格型号</text>
+    <input class='form_input'></input>
+  </view> -->
+  <view class='formItem'>
+    <text class='form_label'>案例价格</text>
+    <view class='form_priceBox'>
+      <input class='form_input_min' disabled='{{isSecrecy}}' value='{{case_price}}' bindinput='writeFinish' data-id='price'></input>
+      <!-- <text class='form_priceBox_line'>-</text>
+      <input class='form_input_min'></input> -->
+      <text class='form_priceBox_line'>元</text>
+      <text class='{{isSecrecy?"discussPersonallyHover":"discussPersonally"}}' bindtap='checkSecrecy'>保密</text>
+    </view>
+  </view>
+  <view class='formItem'>
+    <text class='form_label'>案例描述</text>
+    <textarea class='form_textarea' placeholder='请输入……' placeholder-class='placeholder' value='{{case_desc}}' bindinput='writeFinish' data-id='desc'></textarea>
+  </view>
+  
+  <!-- <view class='formItem'>
+    <text class='form_label'>材料分类</text>
+     <view class='pickerView'>
+        <text wx:if='{{isRegion}}'>{{region[0]}}，{{region[1]}}，{{region[2]}}</text>
+        <text wx:else>请选择</text>
+        <image src='/image/publishDemand_select.png'></image>
+      </view>
+  </view> -->
+  <view class='formItem'>
+    <text class='form_label'>图片上传</text>
+    <v-uploadImage picList='{{case_pic}}'  imageNumber='9' bind:uploadImage='uploadImage' bind:deleteImage='deleteImage'/>
+  </view>
+<!-- 
+  <view class='formItem'>
+    <text class='form_label'>其他说明</text>
+    <textarea class='form_textarea'></textarea>
+  </view> -->
+
+  <view wx:if='{{case_id}}' class='submitForm' bindtap='change'>确认修改</view>
+  <view wx:else class='submitForm' bindtap='publish'>确认发布</view>
+</view>

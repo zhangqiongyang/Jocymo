@@ -44,7 +44,7 @@
 /* 右侧内容 */
 
 .right_box{
-  height: 1020rpx;
+  /* height: 1020rpx; */
   width: 530rpx;
 }
 
@@ -75,12 +75,13 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .threeItemBox {
   width: 140rpx;
   padding-top: 20rpx;
+  padding-left: 9rpx;
+  padding-right: 9rpx;
 }
 
 .threeItemBox image {

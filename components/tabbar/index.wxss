@@ -1,5 +1,10 @@
 /* components/tabbar/index.wxss */
 /* tabbar */
+/* 
+.placder{
+  width: 100%;
+  height: 98rpx;
+} */
 
 .tabbar{
   width: 100%;
@@ -38,4 +43,19 @@
   width: 36rpx;
   height: 36rpx;
   padding: 30rpx;
+}
+
+.shareButton{
+  display: inline;
+}
+button::after {
+  border: none;
+}
+
+button {
+  background-color: #fff;
+  height: 86rpx;
+  border-radius: none;
+  line-height: 37rpx;
+  position: none;
 }

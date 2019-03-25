@@ -1,7 +1,9 @@
 <!--components/publishedProduct/index.wxml-->
 <view class='productItem'>
-  <image class='productImage' src='{{published.image}}'></image>
-  <text>{{published.text}}</text>
-  <image class='productDelete' src='/image/published_delete.png' bindtap='deleteItem'></image>
-</view>
+  <view bindtap='toChangeCase' data-id='{{isProduct?published.product_id:published.case_id}}'>
+    <image class='productImage' src='{{published.pic_url}}' mode="aspectFill"></image>
+    <text>{{isProduct?published.product_name:published.case_name}}</text>
+  </view>
 
+  <image class='productDelete' src='/image/published_delete.png' bindtap='deleteItem' data-id='{{isProduct?published.product_id:published.case_id}}'></image>
+</view>

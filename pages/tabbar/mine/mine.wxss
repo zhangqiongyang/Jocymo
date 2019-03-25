@@ -228,6 +228,23 @@
   height: 68rpx;
 }
 
+
+.publishImage_not{
+  width:140rpx;
+  height: 140rpx;
+  border: 1px solid #DDDDDD;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F6F6F6;
+}
+
+.publishImage_not image{
+  width: 68rpx;
+  height: 68rpx;
+}
+
 .publishItemText{
   font-size: 26rpx;
   color: #666666;
