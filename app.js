@@ -22,10 +22,6 @@ App({
 
     wx.checkSession({
       success() {
-        // wx.showModal({
-        //   title: 'session_key',
-        //   content: '未过期',
-        // })
         if (util.isEmpty(wx.getStorageSync('login_id'))) {
           // 登录
           wx.login({
@@ -44,11 +40,7 @@ App({
                   .then(res => {
                     console.log('--------通过code换取的res---------')
                     console.log(res)
-                    // wx.showModal({
-                    //   title: 'getLogin',
-                    //   content: res.data.login_id,
-                    // })
-
+                 
 
                     wx.setStorageSync('login_id', res.data.login_id)
                     wx.setStorageSync('sessionkey_id', res.data.sessionkey_id)
@@ -59,15 +51,9 @@ App({
                     if (res.data.getUnionid == '1') {
                       that.globalData.isHaveUnionId = true
                       console.log('-------已经含有unionId，不需要解密--------')
-                      // wx.showModal({
-                      //   title: '已经含有unionId',
-                      //   content: '',
-                      // })
+                  
                     } else {
-                      // wx.showModal({
-                      //   title: '不含有unionId',
-                      //   content: '',
-                      // })
+                   
                     }
                   })
 
@@ -109,10 +95,7 @@ App({
       },
       fail() {
         console.log('----session_key 已过期，请重新登录-----')
-        // wx.showModal({
-        //   title: 'session_key 已过期',
-        //   content: '',
-        // })
+      
         // 登录
         wx.login({
           success: res => {
@@ -130,11 +113,7 @@ App({
                 .then(res => {
                   console.log('--------通过code换取的res---------')
                   console.log(res)
-                  // wx.showModal({
-                  //   title: 'getLogin',
-                  //   content: res.data.login_id,
-                  // })
-
+                
 
                   wx.setStorageSync('login_id', res.data.login_id)
                   wx.setStorageSync('sessionkey_id', res.data.sessionkey_id)
@@ -145,15 +124,9 @@ App({
                   if (res.data.getUnionid == '1') {
                     that.globalData.isHaveUnionId = true
                     console.log('-------已经含有unionId，不需要解密--------')
-                    // wx.showModal({
-                    //   title: '已经含有unionId',
-                    //   content: '',
-                    // })
+                  
                   } else {
-                    // wx.showModal({
-                    //   title: '不含有unionId',
-                    //   content: '',
-                    // })
+                 
                   }
                 })
 
@@ -189,10 +162,7 @@ App({
                   .then(res => {
                     console.log('---------获取到用户加密信息----------')
                     console.log(res)
-                    // wx.showModal({
-                    //   title: '解密le',
-                    //   content: '',
-                    // })
+                  
                   })
 
               }

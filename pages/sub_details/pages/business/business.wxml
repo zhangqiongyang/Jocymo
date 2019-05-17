@@ -16,7 +16,7 @@
   <view class='businessList'>
     <block wx:for='{{businessList}}' wx:key='key'>
       <view class='businessItem' bindtap='jumpToBusiness' data-id='{{item.merchant_id}}'>
-        <image class='businessLogo' src='{{item.logo_url}}' mode="aspectFill"></image>
+        <image class='businessLogo' src='{{item.logo_url}}' mode="aspectFit"></image>
         <view class='businessCon'>
           <view class='businessName'>
             <text>{{item.merchant_name}}</text>

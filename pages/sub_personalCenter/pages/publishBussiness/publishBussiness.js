@@ -135,9 +135,7 @@ Page({
     console.log(event)
     const value = event.detail.value,
       id = event.currentTarget.dataset.id
-    if (value == '') {
-      console.log('-----值为空----')
-    } else {
+   
       if (id == 'name') {
         this.setData({
           merchant_name: value
@@ -152,7 +150,7 @@ Page({
         })
       }
       console.log(this.data)
-    }
+    
   },
 
   // 上传图片
@@ -183,14 +181,26 @@ Page({
   // 删除图片
   deleteImage(event) {
     console.log(event)
-    const imageList = event.detail.imageList
+    const imageList = event.detail.imageList,
+      id = event.currentTarget.dataset.id
+    if (id == 'logo') {
+      this.setData({
+        merchant_logo: imageList
+      })
 
-    this.setData({
-      product_pic: imageList
-    })
+    } else if (id == 'swiper') {
 
-    console.log(this.data.product_pic)
+      this.setData({
+        merchant_pic: imageList
+      })
+    } else if (id == 'aptiude') {
 
+      this.setData({
+        merchant_aptiude: imageList
+      })
+    }
+
+    console.log(id)
   },
 
 
@@ -373,6 +383,11 @@ Page({
         console.log(res)
         util._showToastSuccessBack('发布成功')
       })
+      .catch(err => {
+        console.log('-----错误------')
+        console.log(err)
+        util._showToast(err.errorMsg)
+      })
   },
 
 
@@ -397,6 +412,11 @@ Page({
         console.log('--------修改成功了-------')
         console.log(res)
         util._showToastSuccessBack('修改成功')
+      })
+      .catch(err => {
+        console.log('-----错误------')
+        console.log(err)
+        util._showToast(err.errorMsg)
       })
   },
 })

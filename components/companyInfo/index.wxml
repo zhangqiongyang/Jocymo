@@ -1,6 +1,6 @@
 <!--components/companyInfo/index.wxml-->
   <view class='businessInfo'>
-    <image class='businessLogo' src='{{companyInfo.logo_url}}' mode="aspectFill"></image>
+    <image class='businessLogo' src='{{companyInfo.logo_url}}' mode="aspectFit"></image>
     <view class='businessInfoBox'>
       <text>{{companyInfo.merchant_name}}</text>
       <text class='businessDesc'>{{companyInfo.merchant_operation}}</text>

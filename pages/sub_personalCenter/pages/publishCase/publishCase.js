@@ -128,9 +128,7 @@ Page({
     console.log(event)
     const value = event.detail.value,
       id = event.currentTarget.dataset.id
-    if (value == '') {
-      console.log('-----值为空----')
-    } else {
+   
       if (id == 'desc') {
         this.setData({
           case_desc: value
@@ -145,7 +143,7 @@ Page({
         })
       }
       console.log(this.data)
-    }
+    
   },
 
 
@@ -165,10 +163,10 @@ Page({
     const imageList = event.detail.imageList
 
     this.setData({
-      product_pic: imageList
+      case_pic: imageList
     })
 
-    console.log(this.data.product_pic)
+    console.log(this.data.case_pic)
 
   },
   // 发布
@@ -291,6 +289,11 @@ Page({
         console.log(res)
         util._showToastSuccessBack('发布成功')
       })
+      .catch(err => {
+        console.log('-----错误------')
+        console.log(err)
+        util._showToast(err.errorMsg)
+      })
   },
 
   //修改接口
@@ -312,6 +315,11 @@ Page({
         console.log('--------修改成功了-------')
         console.log(res)
         util._showToastSuccessBack('修改成功')
+      })
+      .catch(err => {
+        console.log('-----错误------')
+        console.log(err)
+        util._showToast(err.errorMsg)
       })
   },
 })

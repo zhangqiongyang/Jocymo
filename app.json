@@ -66,5 +66,6 @@
         "selectedIconPath": "image/mineHover.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

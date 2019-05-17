@@ -25,7 +25,7 @@ Component({
       console.log(this.properties.imageNumber)
       const that = this
       wx.chooseImage({
-        count: 9,
+        count: 1,
         sizeType: ['original', 'compressed'],
         sourceType: ['album', 'camera'],
         success(res) {

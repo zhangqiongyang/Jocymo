@@ -119,9 +119,9 @@ Page({
     console.log(event)
     const value = event.detail.value,
       id = event.currentTarget.dataset.id
-    if (value == '') {
-      console.log('-----值为空----')
-    } else {
+    // if (value == '') {
+    //   console.log('-----值为空----')
+    // } else {
       if (id == 'name') {
         this.setData({
           demand_name: value
@@ -152,7 +152,7 @@ Page({
         })
       }
       console.log(this.data)
-    }
+    // }
   },
 
   // 上传图片
@@ -171,10 +171,10 @@ Page({
     const imageList = event.detail.imageList
 
     this.setData({
-      product_pic: imageList
+      demand_pic: imageList
     })
 
-    console.log(this.data.product_pic)
+    console.log(this.data.demand_pic)
 
   },
   // 发布
@@ -316,6 +316,11 @@ Page({
         console.log(res)
         util._showToastSuccessBack('发布成功')
       })
+      .catch(err=>{
+        console.log('-----错误------')
+        console.log(err)
+        util._showToast(err.errorMsg)
+      })
   },
 
 
@@ -339,6 +344,11 @@ Page({
         console.log('--------修改成功了-------')
         console.log(res)
         util._showToastSuccessBack('修改成功')
+      })
+      .catch(err => {
+        console.log('-----错误------')
+        console.log(err)
+        util._showToast(err.errorMsg)
       })
   },
 

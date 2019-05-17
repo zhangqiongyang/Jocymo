@@ -28,6 +28,7 @@
 
 .businessCon{
   margin-left: 20rpx;
+  width: 580rpx;
 }
 
 /* .businessName{
@@ -44,6 +45,13 @@
 .businessDesc{
   font-size: 24rpx;
   color: #999999;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .businessImageBox{

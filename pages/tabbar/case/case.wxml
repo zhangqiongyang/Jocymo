@@ -18,9 +18,9 @@
     <view class='caseList'>
       <block wx:for='{{caseInfo}}'>
         <view class='caseItem' bindtap='jumpToCase' data-id='{{item.case_id}}'>
-          <image class='caseItemBack' src='{{item.pic_url}}' mode='aspectFits'></image>
+          <image class='caseItemBack' src='{{item.pic_url}}' mode='aspectFill'></image>
           <view class='caseItemlogo'>
-            <image src='{{item.logo_url}}'></image>
+            <image src='{{item.logo_url}}' mode='aspectFit'></image>
           </view>
           <view class='caseInfo'>{{item.case_name}}</view>
         </view>
